@@ -37,7 +37,7 @@
       <br/><br/>
       <div class="row">
         <div class="col-sm-12 text-center">
-          <a href="{% url_for controller="group", action="index" %}" class="btn btn-primary">View Groups ></a>
+          <a href="{% url_for controller="group", action="index" %}" class="btn btn-primary">{% trans %}View Groups >{% endtrans %}</a>
         </div>
       </div>
 
@@ -46,22 +46,47 @@
     </div>
   </div>
 
-  <div role="main">
+
+  <div class="organizations section-pad">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12">
+            <h2 class="section-heading">{% trans %}Organizations{% endtrans %}</h2>
+            
+          </div>
+        </div>
+  
+        <div class="row">
+            {% block featured_organization %}
+              {% snippet 'home/snippets/featured_organization.html' %}
+            {% endblock %}
+        </div>
+        
+        <br/><br/>
+        <div class="row">
+          <div class="col-sm-12 text-center">
+            <a href="{% url_for controller="organization", action="index" %}" class="btn btn-primary">{% trans %}View Organizations >{% endtrans %}</a>
+          </div>
+        </div>
+  
+        </div>
+  
+  </div>
+
+
+
+  <!-- Sub Footer -->
+  <div class="subfooter">
     <div class="container">
-      <div class="row row2">
-        <div class="col-md-6 col1">
-          {# Note: this featured_group block is used as an example in the theming
-             tutorial in the docs! If you change this code, be sure to check
-             whether you need to update the docs. #}
-          {# Start template block example. #}
-         
-          {# End template block example. #}
+      <div class="row">
+        <div class="col-sm-9">
+          <h3>{% trans %}Open Data Initiative by Government of Honduras{% endtrans %} </h3>
         </div>
-        <div class="col-md-6 col2">
-          {% block featured_organization %}
-            {% snippet 'home/snippets/featured_organization.html' %}
-          {% endblock %}
+
+        <div class="col-sm-3">
+          <a href="" class="btn btn-white">{% trans %}View Datasets{% endtrans %}</a>
         </div>
       </div>
     </div>
   </div>
+    
