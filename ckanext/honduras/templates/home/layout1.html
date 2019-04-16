@@ -120,6 +120,29 @@
   </div>
 
   <!-- News -->
+  <div class="news section-pad">
+    <div class="container">
+      <div class="row">
+          <div class="col-sm-12">
+            <h2 class="section-heading">{% trans %}News{% endtrans %}</h2>
+          </div>
+  
+            
+          {% block news %}
+            {% snippet 'home/snippets/news.html' %}
+          {% endblock %}
+
+      </div>
+
+      <br/><br/>
+      <div class="row">
+        <div class="col-sm-12 text-center">
+          <a href="#" class="btn btn-primary">{% trans %}View News >{% endtrans %}</a>
+        </div>
+      </div>
+  
+    </div>
+  </div>
 
   <!-- Sub Footer -->
   <div class="subfooter">
