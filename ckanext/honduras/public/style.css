@@ -166,7 +166,19 @@ a.tag:hover {
     background-color:#3A53A3;
     border-color:#3A53A3;
     border-radius:0;
+    font-weight: 400;
+}
 
+.btn-light {
+    background-color:#fff;
+    color:#000;
+    border-radius: 0;
+    font-weight: 400;
+}
+
+.btn-light:hover {
+    background-color:#f5f5f5;
+    
 }
 
 .btn-primary:hover, .btn-primary:active, .btn-primary:focus {
@@ -251,6 +263,26 @@ a.tag:hover {
     color:#565656
 }
 
+
+/*Reutilization Section */
+.reuti {
+    margin-top:50px;
+    background-color:#3A53A3;
+    color:#fff;
+}
+
+.reuti .section-heading {
+    margin-bottom:5px;
+}
+
+.reuti .dataset-details h4 {
+    font-weight: 600;
+    font-size:1.4em;
+    border-bottom:1px solid #fff;
+    margin-bottom:17px;
+    padding-bottom:6px;
+    margin-top:30px;
+}
 
 
 /* Sub footer */
