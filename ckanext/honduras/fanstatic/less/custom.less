@@ -1,6 +1,10 @@
+/* Import Less Assets */
+
+@import "variables.less";
+
 body {
     font-family: 'Lato', sans-serif;
-    background: #fff;
+    background: @white;
 }
 
 h1,h2{
@@ -14,13 +18,13 @@ h3,h4,h5,h6 {
 }
 
 h1 {
-    color:#806c2f;
+    color:@secondary-color;
     font-size:40px;
 }
 
 .hero {
    
-    background: #fff url('hero-bg.png');
+    background: @white url('hero-bg.png');
     background-size: cover;
     background-position: center center;
   
@@ -31,7 +35,7 @@ h1 {
 }
 
 .masthead {
-    background-color:#fff;
+    background-color:@white;
     
 }
 
@@ -40,16 +44,16 @@ h1 {
 }
 
 .masthead .nav li a:hover {
-    background: #3A53A3;
+    background: @primary-color;
 }
 
 .account-masthead {
     padding:0px 0;
-    background: #3A53A3;
+    background: @primary-color;
 }
 
 .site-footer {
-    background: #343434;
+    background: @alternate-color;
 }
 
 .form-control {
@@ -58,11 +62,11 @@ h1 {
 
 
 .masthead .navigation .nav-pills li a:hover, .masthead .navigation .nav-pills li a:focus, .masthead .navigation .nav-pills li.active a {
-    background-color: #ffffff;
+    background-color: @white;
 }
 
 .masthead .nav > li > a:focus, .masthead .nav > li > a:hover,.masthead .nav > .active > a, .masthead .nav > .active > a:hover, .masthead .nav > .active > a:focus {
-    color: #3A53A3;
+    color: @primary-color;
 }
 
 
@@ -71,12 +75,12 @@ h1 {
     border-left: 0;
 }
 .account-masthead .account ul li a {
-    color:#fff;
+    color:@white;
     padding: 3px 15px;
 }
 .account-masthead .account ul li a.sub {
      font-weight: 400;
-     background-color:#253565;
+     background-color:@primary-dark-color;
 }
 
 
@@ -90,7 +94,7 @@ h1 {
     font-family: 'Cinzel',serif;
 
     font-weight:400;
-    color:#806c2f;
+    color:@secondary-color;
 }
 
 .homepage .module-search .module-content {
@@ -101,7 +105,7 @@ h1 {
 
 .homepage .module-search {
     padding: 5px;
-    color: #ffffff;
+    color: @white;
     background: transparent;
 }
 
@@ -125,7 +129,7 @@ h1 {
 }
 
 .homepage .module-search .search-giant input {
-    border-color: #003f52;
+    border-color: @primary-color;
     border: 0;
     border-radius: 4px;
     box-shadow: 0 2px 7px #b7b7b7;
@@ -138,8 +142,8 @@ h1 {
 
 .tag {
     display: inline-block;
-    color: #ffffff;
-    background-color: #3A53A3;
+    color: @white;
+    background-color: @primary-color;
     padding: 1px 14px;
     border-radius: 4px;
      -webkit-box-shadow: none; 
@@ -149,40 +153,40 @@ h1 {
 
 a.tag:hover {
     text-decoration: none;
-    color: #fff;
-    background-color:#253565;
-    border: 1px solid #253565;
+    color: @white;
+    background-color:@primary-color;
+    border: 1px solid @primary-color;
     -webkit-box-shadow: none;
     box-shadow: none;
 }
 
 .tag:hover {
-    background-color:#2a4394;
+    background-color:@primary-dark-color;
 }
 
 
 /* Buttons */
 .btn-primary {
-    background-color:#3A53A3;
-    border-color:#3A53A3;
+    background-color:@primary-color;
+    border-color:@primary-color;
     border-radius:0;
     font-weight: 400;
 }
 
 .btn-light {
-    background-color:#fff;
+    background-color:@white;
     color:#000;
     border-radius: 0;
     font-weight: 400;
 }
 
 .btn-light:hover {
-    background-color:#f5f5f5;
+    background-color:@light-grey;
     
 }
 
 .btn-primary:hover, .btn-primary:active, .btn-primary:focus {
-    background-color:#2a4394;
+    background-color:@primary-dark-color;
 }
 
 .no-pad {
@@ -201,8 +205,8 @@ a.tag:hover {
 /* Homepage Totals */
 .totals {
     padding:40px 0 35px 0;
-    background: #3A53A3;
-    color:#fff;
+    background: @primary-color;
+    color:@white;
 }
 
 .totals p,h4 {
@@ -220,12 +224,12 @@ a.tag:hover {
 
 /* Groups */
 .group {
-    background-color:#f5f5f5;
+    background-color:@light-grey;
     padding:10px;
 }
 
 .group .media-heading a {
-    color:#3A53A3 !important; 
+    color:@primary-color !important; 
 }
 
 .group .dataset-item {
@@ -243,12 +247,12 @@ a.tag:hover {
 
 /* Organizations */
 .organization {
-    background-color:#f5f5f5;
+    background-color:@light-grey;
     padding:10px;
 }
 
 .organization .media-heading a {
-    color:#3A53A3 !important; 
+    color:@primary-color !important; 
 }
 
 .organization .dataset-item {
@@ -260,15 +264,15 @@ a.tag:hover {
 }
 
 .organization .dataset-item .dataset-content .dataset-heading a {
-    color:#565656
+    color:#565656;
 }
 
 
 /*Reutilization Section */
 .reuti {
     margin-top:50px;
-    background-color:#3A53A3;
-    color:#fff;
+    background-color:@primary-color;
+    color:@white;
 }
 
 .reuti .section-heading {
@@ -278,7 +282,7 @@ a.tag:hover {
 .reuti .dataset-details h4 {
     font-weight: 600;
     font-size:1.4em;
-    border-bottom:1px solid #fff;
+    border-bottom:1px solid @white;
     margin-bottom:17px;
     padding-bottom:6px;
     margin-top:30px;
@@ -293,7 +297,7 @@ a.tag:hover {
     padding:6px 0;
 }
 .news h4 a {
-    color:#3A53A3;
+    color:@primary-color;
     font-size:1.4em;
     font-weight: 600;
 }
@@ -302,11 +306,11 @@ a.tag:hover {
 /* Sub footer */
 .subfooter {
     padding:30px 0;
-    background-color:#3A53A3;
+    background-color:@primary-color;
 }
 
 .subfooter h3{
-    color:#fff;
+    color:@white;
     font-size:2.1em;
     font-weight:100;
     margin:0;
@@ -314,7 +318,7 @@ a.tag:hover {
 }
 
 .subfooter .btn {
-    background-color:#fff;
+    background-color:@white;
     color:#000;
     padding:10px 28px;
     font-size:16px;
@@ -324,5 +328,5 @@ a.tag:hover {
 }
 
 .subfooter .btn:hover {
-    background-color:#f5f5f5;
+    background-color:@light-grey;
 }
