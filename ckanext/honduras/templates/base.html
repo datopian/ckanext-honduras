@@ -1,8 +1,17 @@
 {% ckan_extends %}
 
-{% block styles %}
-  {{ super() }}
+{% block links %}
   <link href="https://fonts.googleapis.com/css?family=Cinzel" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900" rel="stylesheet">
-  <link href="/style.css" rel="stylesheet" type="text/css" />
+  {{ super() }}
+{% endblock %}
+
+
+{% block styles %}
+  {{ super() }}
+  {% resource 'honduras/css/custom.css' %}
+{% endblock %}
+
+{% block scripts %}
+  {{ super() }}
 {% endblock %}
