@@ -22,6 +22,43 @@ h1 {
     font-size:40px;
 }
 
+/* Buttons */
+.btn-primary {
+    background-color:@primary-color;
+    border-color:@primary-color;
+    border-radius:0;
+    font-weight: 400;
+}
+
+.btn-light {
+    background-color:@white;
+    color:#000;
+    border-radius: 0;
+    font-weight: 400;
+}
+
+.btn-light:hover {
+    background-color:@light-grey;
+    
+}
+
+.btn-primary:hover, .btn-primary:active, .btn-primary:focus {
+    background-color:@primary-dark-color;
+}
+
+.no-pad {
+    padding:0;
+}
+
+.section-heading {
+    font-size:2.2em;
+    margin-bottom:30px;
+}
+
+.section-pad {
+    padding:40px 0 50px 0;
+}
+
 .hero {
    
     background: @white url('/images/hero-bg.png');
@@ -85,60 +122,62 @@ h1 {
 
 
 /* Search */
-.homepage .module-search {
-    margin-top: 50px;
+.homepage {
+    .module-search {
+        margin-top: 50px;
+        padding: 5px;
+        color: @white;
+        background: transparent;
+        
+        .module-content .heading {
+            font-size:4em;
+            font-family: 'Cinzel',serif;
+        
+            font-weight:400;
+            color:@secondary-color;
+
+            @media screen and (max-width:480px) {
+                font-size:2.2em;
+            }
+        }
+
+        .module-content {
+            border-radius:0 0; 
+            background-color:transparent; 
+            border-bottom: none;
+        }
+
+        .tags {
+            padding: 5px 10px 10px 10px;
+            background-color: transparent;
+            border-radius: 0;
+        }
+
+        .search-input {
+            margin-top:20px;
+        }
+        .search-giant input {
+            border-color: @primary-color;
+            border: 0;
+            border-radius: 4px;
+            box-shadow: 0 2px 7px #b7b7b7;
+        }
+        .tags h3 {
+            color:#383838;
+            font-family: 'Lato', sans-serif;;
+        }
+    }
+
+    .module-search.box {
+        background: transparent;
+        border: 0;
+        border-radius: 0;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+    
+    }
 }
 
-.homepage .module-search .module-content .heading {
-    font-size:50px;
-    font-family: 'Cinzel',serif;
-
-    font-weight:400;
-    color:@secondary-color;
-}
-
-.homepage .module-search .module-content {
-    border-radius:0 0; 
-    background-color:transparent; 
-    border-bottom: none;
-}
-
-.homepage .module-search {
-    padding: 5px;
-    color: @white;
-    background: transparent;
-}
-
-.homepage .module-search.box {
-    background: transparent;
-    border: 0;
-    border-radius: 0;
-    -webkit-box-shadow: none;
-    box-shadow: none;
-
-}
-
-.homepage .module-search .tags {
-    padding: 5px 10px 10px 10px;
-    background-color: transparent;
-    border-radius: 0;
-}
-
-.homepage .module-search .search-input {
-    margin-top:20px;
-}
-
-.homepage .module-search .search-giant input {
-    border-color: @primary-color;
-    border: 0;
-    border-radius: 4px;
-    box-shadow: 0 2px 7px #b7b7b7;
-}
-
-.homepage .module-search .tags h3 {
-    color:#383838;
-    font-family: 'Lato', sans-serif;;
-}
 
 .tag {
     display: inline-block;
@@ -149,6 +188,10 @@ h1 {
      -webkit-box-shadow: none; 
     box-shadow: none;
     font-size: 18px;
+
+    @media screen and (max-width:480px) {
+        font-size:14px;
+    }
 }
 
 a.tag:hover {
@@ -165,60 +208,25 @@ a.tag:hover {
 }
 
 
-/* Buttons */
-.btn-primary {
-    background-color:@primary-color;
-    border-color:@primary-color;
-    border-radius:0;
-    font-weight: 400;
-}
 
-.btn-light {
-    background-color:@white;
-    color:#000;
-    border-radius: 0;
-    font-weight: 400;
-}
-
-.btn-light:hover {
-    background-color:@light-grey;
-    
-}
-
-.btn-primary:hover, .btn-primary:active, .btn-primary:focus {
-    background-color:@primary-dark-color;
-}
-
-.no-pad {
-    padding:0;
-}
-
-.section-heading {
-    font-size:2.2em;
-    margin-bottom:30px;
-}
-
-.section-pad {
-    padding:40px 0 50px 0;
-}
 
 /* Homepage Totals */
 .totals {
     padding:40px 0 35px 0;
     background: @primary-color;
     color:@white;
-}
 
-.totals p,h4 {
-    padding:0;
-    margin:0;
-    font-family: 'Lato', sans-serif;
-}
+    p,h4 {
+        padding:0;
+        margin:0;
+        font-family: 'Lato', sans-serif;
+    }
 
-.totals h4{
-    font-size: 2.6em;
-    font-weight: 100 !important;
-    line-height: 0.9;
+    h4{
+        font-size: 2.6em;
+        font-weight: 100 !important;
+        line-height: 0.9;
+    }
 }
 
 
@@ -226,45 +234,47 @@ a.tag:hover {
 .group {
     background-color:@light-grey;
     padding:10px;
-}
+    margin-bottom:30px;
 
-.group .media-heading a {
-    color:@primary-color !important; 
-}
+    .media-heading a {
+        color:@primary-color !important; 
+    }
 
-.group .dataset-item {
-    margin-top: 10px;
-}
+    .dataset-item {
+        margin-top: 10px;
+        
+        .dataset-content .dataset-heading {
+            font-weight: 600;
 
-.group .dataset-item .dataset-content .dataset-heading {
-    font-weight: 600;
-}
+            a {
+                color:#565656
+            }
+        }
 
-.group .dataset-item .dataset-content .dataset-heading a {
-    color:#565656
+    }
 }
-
 
 /* Organizations */
 .organization {
     background-color:@light-grey;
     padding:10px;
-}
+    margin-bottom:30px;
 
-.organization .media-heading a {
-    color:@primary-color !important; 
-}
+    .media-heading a {
+        color:@primary-color !important; 
+    }
 
-.organization .dataset-item {
-    margin-top: 10px;
-}
+    .dataset-item {
+        margin-top: 10px;
+    }
 
-.organization .dataset-item .dataset-content .dataset-heading {
-    font-weight: 600;
-}
+    .dataset-item .dataset-content .dataset-heading {
+        font-weight: 600;
 
-.organization .dataset-item .dataset-content .dataset-heading a {
-    color:#565656;
+        a {
+            color:#565656;
+        }
+    }
 }
 
 
@@ -294,6 +304,9 @@ a.tag:hover {
 .news {
     margin-bottom:70px;
 
+    .news-item {
+        margin-bottom:30px;
+    }
     .news-header {
         position: relative;
         min-height:150px;
@@ -357,6 +370,10 @@ a.tag:hover {
 .site-footer {
     padding:60px 0;
     color: @white;
+
+    .logo {
+        margin-bottom:40px;
+    }
 
     label, small,strong {
         color: @white;
