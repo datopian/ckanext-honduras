@@ -199,7 +199,7 @@ a.tag:hover {
 }
 
 .section-pad {
-    padding:40px 0;
+    padding:40px 0 50px 0;
 }
 
 /* Homepage Totals */
@@ -273,33 +273,54 @@ a.tag:hover {
     margin-top:50px;
     background-color:@primary-color;
     color:@white;
-}
+    background-image:url('/images/bg-dark.png');
+    background-size: cover;
+    .section-heading {
+        margin-bottom:5px;
+    }
 
-.reuti .section-heading {
-    margin-bottom:5px;
+    .dataset-details h4 {
+        font-weight: 600;
+        font-size:1.4em;
+        border-bottom:1px solid @white;
+        margin-bottom:17px;
+        padding-bottom:6px;
+        margin-top:30px;
+    }
+    
 }
-
-.reuti .dataset-details h4 {
-    font-weight: 600;
-    font-size:1.4em;
-    border-bottom:1px solid @white;
-    margin-bottom:17px;
-    padding-bottom:6px;
-    margin-top:30px;
-}
-
 
 /* News */
 .news {
     margin-bottom:70px;
-}
-.news h4 {
-    padding:6px 0;
-}
-.news h4 a {
-    color:@primary-color;
-    font-size:1.4em;
-    font-weight: 600;
+
+    .news-header {
+        position: relative;
+        min-height:150px;
+        background-color:@light-grey;
+
+        .date {
+            position: absolute;
+            top:10px;
+            left:10px;
+            color: @white;
+            background-color: @secondary-light-color;
+            padding: 5px 10px;
+            border-radius: 4px;
+        }
+    }
+    img {
+        width:100%;
+    }
+    h4 {
+        padding:6px 0;
+
+        a {
+            color:@primary-color;
+            font-size:1.4em;
+            font-weight: 600;
+        }
+    }
 }
 
 
@@ -307,28 +328,28 @@ a.tag:hover {
 .subfooter {
     padding:30px 0;
     background-color:@primary-color;
-}
 
-.subfooter h3{
-    color:@white;
-    font-size:2.1em;
-    font-weight:100;
-    margin:0;
-    padding:8px 0 0 0;
-}
+    h3{
+        color:@white;
+        font-size:2.1em;
+        font-weight:100;
+        margin:0;
+        padding:8px 0 0 0;
+    }
 
-.subfooter .btn {
-    background-color:@white;
-    color:#000;
-    padding:10px 28px;
-    font-size:16px;
-    border-radius:0;
-    font-weight:100;
-    margin-top: 10px;
-}
-
-.subfooter .btn:hover {
-    background-color:@light-grey;
+    .btn {
+        background-color:@white;
+        color:#000;
+        padding:10px 28px;
+        font-size:16px;
+        border-radius:0;
+        font-weight:100;
+        margin-top: 10px;
+    }
+    
+    .btn:hover {
+        background-color:@light-grey;
+    }
 }
 
 
