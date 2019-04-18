@@ -24,7 +24,7 @@ h1 {
 
 .hero {
    
-    background: @white url('hero-bg.png');
+    background: @white url('/images/hero-bg.png');
     background-size: cover;
     background-position: center center;
   
@@ -329,4 +329,43 @@ a.tag:hover {
 
 .subfooter .btn:hover {
     background-color:@light-grey;
+}
+
+
+/* footer */
+.site-footer {
+    padding:60px 0;
+    color: @white;
+
+    label, small,strong {
+        color: @white;
+        font-size: 18px;
+        margin-bottom:10px;
+    }
+
+    p,a {
+        font-size:15px;
+        color:@white;
+    }
+
+    .footer-links ul li {
+        margin-bottom: 15px;
+    }
+}
+
+
+/* Selector drop-down */
+.select2-container .select2-choice .select2-arrow {
+    border-left: 0; 
+    background: @white;
+    background-image: none; 
+    background-image: none;
+    background-image: none;
+    filter: none;
+    background-image: none;
+}
+
+.select2-container .select2-choice {
+    height: 34px;
+    line-height: 34px;
 }
