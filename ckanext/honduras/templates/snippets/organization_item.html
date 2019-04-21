@@ -6,7 +6,7 @@
       <header class="module-heading">
         {% block organization_item_header_image %}
         <a class="module-image" href="{{ url }}">
-          <img src="{{ organization.image_display_url or h.url_for_static('images/placeholder-organization.png') }}" alt="{{ organization.name }}" />
+          <img src="{{ organization.image_display_url or h.url_for_static('images/organizations.png') }}" alt="{{ organization.name }}" />
         </a>
         {% endblock %}
         {% block organization_item_header_title %}
@@ -21,12 +21,9 @@
             {% endif %}
           {% endif %}
         {% endblock %}
+        <strong class="count">2 Datasets</strong>
       </header>
     {% endblock %}
-    {% block organization_item_content %}
-      {% set list_class = "list-unstyled dataset-list" %}
-      {% set item_class = "dataset-item module-content" %}
-      {% snippet 'snippets/package_list.html', packages=organization.packages, list_class=list_class, item_class=item_class, truncate=120 %}
-    {% endblock %}
+    
   </section>
 {% endblock %}
