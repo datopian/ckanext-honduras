@@ -1,1 +1,5 @@
 {% ckan_extends %}
+
+{% block image %}
+    <img src="{{ group.image_display_url or h.url_for_static('/images/group_default.png') }}" alt="{{ group.name }}" class="media-image img-responsive">
+{% endblock %}
