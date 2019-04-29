@@ -1,0 +1,161 @@
+<div role="main" class="hero">
+  <div class="container">
+    <div class="row row1">
+      <div class="col-md-7">
+        {% block search %}
+          {% snippet 'home/snippets/search.html' %}
+        {% endblock %}
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="totals  hidden-xs hidden-sm">
+  <div class="container">
+      {# Totals Block #}
+      {% block totals %}
+        {% snippet 'home/snippets/totals.html' %}
+      {% endblock %}
+  </div>
+</div>
+
+<div class="groups section-pad">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12">
+          <h2 class="section-heading">{% trans %}Groups{% endtrans %}</h2>
+          
+        </div>
+      </div>
+
+      <div class="row">
+            {% block featured_group %}
+              {% snippet 'home/snippets/featured_group.html' %}
+            {% endblock %}
+      </div>
+      
+      <br/><br/>
+      <div class="row">
+        <div class="col-sm-12 text-center">
+          <a href="{% url_for controller="group", action="index" %}" class="btn btn-primary">{% trans %}View Groups >{% endtrans %}</a>
+        </div>
+      </div>
+
+      </div>
+
+    </div>
+  </div>
+
+
+  <div class="organizations section-pad">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12">
+            <h2 class="section-heading">{% trans %}Organizations{% endtrans %}</h2>
+            
+          </div>
+        </div>
+  
+        <div class="row">
+            {% block featured_organization %}
+              {% snippet 'home/snippets/featured_organization.html' %}
+            {% endblock %}
+        </div>
+        
+        <br/><br/>
+        <div class="row">
+          <div class="col-sm-12 text-center">
+            <a href="{% url_for controller="organization", action="index" %}" class="btn btn-primary">{% trans %}View Organizations >{% endtrans %}</a>
+          </div>
+        </div>
+  
+        </div>
+  
+  </div>
+
+  <!-- Reutilizations Section -->
+  <div class="reuti section-pad">
+    <div class="container">
+      <div class="row">
+
+          {% block reutilization %}
+            {% snippet 'home/snippets/reutilization.html' %}
+          {% endblock %}
+
+      </div>
+    </div>
+  </div>
+
+
+  <!-- knowledge -->
+  <div class="knowledge section-pad">
+    <div class="container">
+      <div class="row">
+
+          <div class="col-sm-12">
+            <h2 class="section-heading">{% trans %}Knowledge about Open Data{% endtrans %}</h2>
+            <p>{% trans %}Honduras supports re-usable, accessible, understandable and shareable data. {% endtrans %}</p>
+            <p>{% trans %}You will find data that Council divisions have made available to the public online. {% endtrans %}</p>
+            <p>{% trans %}You can use these data sets to: {% endtrans %}</p>
+            <ul>
+              <li>{% trans %}build apps and tools {% endtrans %}</li>
+              <li>{% trans %}research{% endtrans %}</li>
+              <li>{% trans %}market intelligence  {% endtrans %}</li>
+            </ul>
+
+            <p>{% trans %}Can’t find what you're looking for? Use the <a href="#">Suggest a Dataset</a> tool to ask for an undiscovered set.{% endtrans %}</p>
+            <p>{% trans %}Get involved; connect and chat to others about existing or suggested data and share your ideas with us.{% endtrans %}</p>
+            <p>{% trans %}Some datasets require you to register as a user first, before you can access them.{% endtrans %}</p>
+            <ul>
+              <li>{% trans %}<a href="#">Register as a user</a> {% endtrans %}</li>
+              <li>{% trans %}<a href="#">Log-in to an existing account</a>{% endtrans %}</li>
+            </ul>
+            
+            <br/>
+            <a href="#" class="btn btn-primary">{% trans %}Read More {% endtrans %}></a>
+          </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- News -->
+  <div class="news section-pad">
+    <div class="container">
+      <div class="row">
+          <div class="col-sm-12">
+            <h2 class="section-heading">{% trans %}News{% endtrans %}</h2>
+          </div>
+  
+            
+          {% block news %}
+            {% snippet 'home/snippets/news.html' %}
+          {% endblock %}
+
+      </div>
+
+      <br/><br/>
+      <div class="row">
+        <div class="col-sm-12 text-center">
+          <a href="#" class="btn btn-primary">{% trans %}View News >{% endtrans %}</a>
+        </div>
+      </div>
+  
+    </div>
+  </div>
+
+  <!-- Sub Footer -->
+  <div class="subfooter">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-9">
+          <h3>{% trans %}Open Data Initiative by Government of Honduras{% endtrans %} </h3>
+        </div>
+
+        <div class="col-sm-3 text-right">
+          <a href="" class="btn btn-white">{% trans %}View Datasets{% endtrans %}</a>
+        </div>
+      </div>
+    </div>
+  </div>
+    
