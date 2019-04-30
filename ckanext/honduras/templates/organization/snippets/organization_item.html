@@ -1,0 +1,5 @@
+{% ckan_extends %}
+
+{% block image %}
+    <img src="{{ organization.image_display_url or h.url_for_static('images/organizations.png') }}" alt="{{ organization.name }}" class="img-responsive media-image">
+{% endblock %}
