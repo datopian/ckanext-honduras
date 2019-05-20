@@ -533,6 +533,8 @@ a.tag:hover {
                 background-color:@light-grey;
                 width:30%;
                 margin:0 15px 25px 0; 
+                
+                
 
                 .media-heading {
                     font-size:300;
@@ -646,7 +648,13 @@ a.tag:hover {
         box-shadow: 0 2px 7px #b7b7b7;
         position:relative;
         z-index:10;
+        @media only screen and (max-width: 768px)  
+        {
+            z-index:0;
+        }
     }
+        
+    
 
     button {
         cursor: pointer;
@@ -662,6 +670,8 @@ a.tag:hover {
         z-index:99 !important;
         opacity:.6;
         outline:none
+        
+    }
     }
 
     button:hover,button:active,button:focus,button.active {
@@ -671,7 +681,6 @@ a.tag:hover {
         box-shadow:none;
     }
     
-}
 
 
 /* Stages */
@@ -696,13 +705,25 @@ a.tag:hover {
 /* dateset search page */
 
 .dataset-search {
+    @media only screen and (max-width: 768px)
+    {
+        margin-top:0px !important;
+    }
+
+    
 
     .module-footer {
         padding: 20px 25px 7px;
         border:none !important;
     }
     .module {
-
+        .module-content
+        {
+            @media only screen and (max-width: 768px)
+            {
+                padding:10px !important;
+            }
+        }
         nav {
 
             ul{
@@ -846,10 +867,6 @@ a.tag:hover {
             }
             
         }
-
-
-        
-
         
     }
 
@@ -863,4 +880,33 @@ a.tag:hover {
         background-color: #3a53a3;
         padding: 6px 10px;
     }
+    .navbar-toggle:hover 
+    {
+        background-color: #3a53a3 !important;
+    }
+    .navbar-toggle:focus 
+    {
+        background-color: #3a53a3 !important;
+    }
+    .navbar-toggle:active 
+    {
+        background-color: #3a53a3 !important;
+    }
+
+     .media-grid .media-item {
+        width:100% !important;
+    }
+    .group-pg .primary .module-content
+    {
+        padding:0px !important;
+    }
+    .group-pg .media-image
+    {
+        margin:0 auto;
+    }
+    .organization-pg .primary  .module-content
+    {
+        padding:0px !important;
+    }
+   
 }
