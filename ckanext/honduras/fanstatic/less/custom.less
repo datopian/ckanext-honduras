@@ -53,10 +53,19 @@ h1 {
 .section-heading {
     font-size:2.2em;
     margin-bottom:30px;
+    @media only screen and (max-width: 768px) 
+    {
+        margin-bottom:15px;
+        font-size:1.7em;
+    }
 }
 
 .section-pad {
     padding:40px 0 50px 0;
+    @media only screen and (max-width: 768px)  
+    {
+        padding:0px 0 30px 0;
+    }
 }
 
 .hero {
@@ -69,6 +78,9 @@ h1 {
 
 [role=main] {
     min-height: 400px;
+    @media only screen and (max-width: 768px) {
+        min-height: 250px;
+    }
 }
 
 .masthead {
@@ -128,6 +140,10 @@ h1 {
         padding: 5px;
         color: @white;
         background: transparent;
+        @media only screen and (max-width: 768px)
+        {
+            margin-top:0px !important;
+        }
         
         .module-content .heading {
             font-size:4em;
@@ -235,7 +251,17 @@ a.tag:hover {
     background-color:@light-grey;
     padding:10px;
     margin-bottom:30px;
-
+    @media only screen and (max-width: 768px)
+    {
+        margin-right:15px;
+        margin-bottom:15px;
+    }
+    .media-heading{
+        @media only screen and (max-width: 768px)
+        {
+            font-size:16px;
+        }
+    }
     .media-heading a {
         color:@primary-color !important; 
     }
@@ -267,6 +293,11 @@ a.tag:hover {
     background-color:@light-grey;
     padding:10px;
     margin-bottom:30px;
+    @media only screen and (max-width: 768px) 
+    {
+        margin-bottom:15px;
+        margin-right:15px;
+    }
 
     .media-heading a {
         color:@primary-color !important; 
@@ -299,6 +330,16 @@ a.tag:hover {
     }
 }
 
+.knowledge 
+{
+    @media only screen and (max-width: 768px) 
+    {
+
+        padding: 25px 0px  30px 0px !important;
+
+    }
+    
+}
 
 /*Reutilization Section */
 .reuti {
@@ -309,6 +350,7 @@ a.tag:hover {
     background-size: cover;
     .section-heading {
         margin-bottom:5px;
+        
     }
 
     .dataset-details h4 {
@@ -325,9 +367,15 @@ a.tag:hover {
 /* News */
 .news {
     margin-bottom:70px;
+    @media only screen and (max-width: 768px) {
+        margin-bottom:30px;
+    }
 
     .news-item {
         margin-bottom:30px;
+        @media only screen and (max-width: 768px) {
+            margin-right:15px;
+        }
     }
     .news-header {
         position: relative;
@@ -370,6 +418,10 @@ a.tag:hover {
         font-weight:300;
         margin:0;
         padding:8px 0 0 0;
+        @media only screen and (max-width: 768px) 
+        {
+            font-size:1.8em;
+        }
     }
 
     .btn {
@@ -380,10 +432,22 @@ a.tag:hover {
         border-radius:0;
         font-weight:300;
         margin-top: 10px;
+
+        @media only screen and (max-width: 768px) { 
+            padding: 6px 12px;
+           font-size: 14px;
+        }
     }
+    
     
     .btn:hover {
         background-color:@light-grey;
+    }
+    @media only screen and (max-width: 768px) {
+        .text-right 
+        {
+            text-align:left !important;
+        }
     }
 }
 
@@ -469,6 +533,8 @@ a.tag:hover {
                 background-color:@light-grey;
                 width:30%;
                 margin:0 15px 25px 0; 
+                
+                
 
                 .media-heading {
                     font-size:300;
@@ -582,7 +648,13 @@ a.tag:hover {
         box-shadow: 0 2px 7px #b7b7b7;
         position:relative;
         z-index:10;
+        @media only screen and (max-width: 768px)  
+        {
+            z-index:0;
+        }
     }
+        
+    
 
     button {
         cursor: pointer;
@@ -598,6 +670,8 @@ a.tag:hover {
         z-index:99 !important;
         opacity:.6;
         outline:none
+        
+    }
     }
 
     button:hover,button:active,button:focus,button.active {
@@ -607,7 +681,6 @@ a.tag:hover {
         box-shadow:none;
     }
     
-}
 
 
 /* Stages */
@@ -632,13 +705,25 @@ a.tag:hover {
 /* dateset search page */
 
 .dataset-search {
+    @media only screen and (max-width: 768px)
+    {
+        margin-top:0px !important;
+    }
+
+    
 
     .module-footer {
         padding: 20px 25px 7px;
         border:none !important;
     }
     .module {
-
+        .module-content
+        {
+            @media only screen and (max-width: 768px)
+            {
+                padding:10px !important;
+            }
+        }
         nav {
 
             ul{
@@ -782,11 +867,46 @@ a.tag:hover {
             }
             
         }
-
-
-        
-
         
     }
 
+}
+
+/**** Responsive CSS *****/
+ 
+@media only screen and (max-width: 768px) { 
+    .navbar-toggle {
+        margin-right: 20px !important;
+        background-color: #3a53a3;
+        padding: 6px 10px;
+    }
+    .navbar-toggle:hover 
+    {
+        background-color: #3a53a3 !important;
+    }
+    .navbar-toggle:focus 
+    {
+        background-color: #3a53a3 !important;
+    }
+    .navbar-toggle:active 
+    {
+        background-color: #3a53a3 !important;
+    }
+
+     .media-grid .media-item {
+        width:100% !important;
+    }
+    .group-pg .primary .module-content
+    {
+        padding:0px !important;
+    }
+    .group-pg .media-image
+    {
+        margin:0 auto;
+    }
+    .organization-pg .primary  .module-content
+    {
+        padding:0px !important;
+    }
+   
 }
