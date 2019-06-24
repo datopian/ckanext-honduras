@@ -43,7 +43,7 @@ h1 {
 }
 
 .btn-primary:hover, .btn-primary:active, .btn-primary:focus {
-    background-color:@primary-dark-color;
+    background-color:@primary-dark-color !important;
 }
 
 .no-pad {
@@ -83,8 +83,12 @@ h1 {
     }
 }
 
+[role=main], .main  {
+    padding-top:0;
+}
+
 .masthead {
-    background-color:@white;
+    background:@white;
     
 }
 
@@ -871,6 +875,12 @@ a.tag:hover {
     }
 
 }
+
+/* Admin */
+.account-masthead .account.authed .image {
+    padding: 3px 15px;
+}
+
 
 /**** Responsive CSS *****/
  
