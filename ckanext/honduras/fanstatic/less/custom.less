@@ -22,6 +22,10 @@ h1 {
     font-size:40px;
 }
 
+a {
+    color: @primary-color;
+}
+
 /* Buttons */
 .btn-primary {
     background-color:@primary-color;
@@ -899,7 +903,39 @@ a.tag:hover {
     border-radius:0;
 }
 
+.page-header {
+    background:transparent;
+}
 
+.nav-tabs > li > a {
+    border-top:0;
+    border-left:0;
+    border-right:0;
+    border-bottom:3px solid #eee;
+}
+.nav-tabs > li.active > a {
+    border-top:0;
+    border-left:0;
+    border-right:0;
+    border-bottom:3px solid @primary-dark-color;
+}
+
+.nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus {
+    border-top:0;
+    border-left:0;
+    border-right:0;
+    border-bottom:3px solid @primary-dark-color;
+}
+
+.nav-tabs > li > a:hover {
+    border-top:0;
+    border-left:0;
+    border-right:0;
+    border-bottom:3px solid #eee;
+}
+.context-info h1.heading {
+    font-weight:bold;
+}
 /**** Responsive CSS *****/
  
 @media only screen and (max-width: 768px) { 
