@@ -1,4 +1,3 @@
-import ckan.lib.helpers as h
 import ckan.plugins as plugins
 import ckan.plugins.toolkit as toolkit
 
@@ -12,4 +11,3 @@ class HondurasPlugin(plugins.SingletonPlugin):
         toolkit.add_template_directory(config_, 'templates')
         toolkit.add_public_directory(config_, 'public')
         toolkit.add_resource('fanstatic', 'honduras')
-        licenses = h.license_options('cc-by')
