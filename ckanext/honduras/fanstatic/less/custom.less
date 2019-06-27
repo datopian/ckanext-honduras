@@ -22,6 +22,10 @@ h1 {
     font-size:40px;
 }
 
+a {
+    color: @primary-color;
+}
+
 /* Buttons */
 .btn-primary {
     background-color:@primary-color;
@@ -43,7 +47,11 @@ h1 {
 }
 
 .btn-primary:hover, .btn-primary:active, .btn-primary:focus {
-    background-color:@primary-dark-color;
+    background-color:@primary-dark-color !important;
+}
+
+.btn-danger:hover, .btn-danger:active, .btn-danger:focus {
+    background-color:#c9302c !important;
 }
 
 .no-pad {
@@ -83,8 +91,12 @@ h1 {
     }
 }
 
+[role=main], .main  {
+    padding-top:0;
+}
+
 .masthead {
-    background-color:@white;
+    background:@white;
     
 }
 
@@ -872,6 +884,60 @@ a.tag:hover {
 
 }
 
+/* Admin */
+.account-masthead .account.authed .image {
+    padding: 3px 15px;
+}
+
+.btn {
+    border-radius:0;
+}
+
+.btn-warning{
+    background-color:@secondary-light-color;
+    border-color:@secondary-light-color;
+}
+
+.wrapper {
+    border: 1px solid #e0e0e0;
+    border-radius:0;
+}
+
+.page-header {
+    background:transparent;
+}
+
+.nav-tabs > li > a {
+    border-top:0;
+    border-left:0;
+    border-right:0;
+    border-bottom:3px solid #eee;
+}
+.nav-tabs > li.active > a {
+    border-top:0;
+    border-left:0;
+    border-right:0;
+    border-bottom:3px solid @primary-dark-color;
+}
+
+.nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus {
+    border-top:0;
+    border-left:0;
+    border-right:0;
+    border-bottom:3px solid @primary-dark-color;
+}
+
+.nav-tabs > li > a:hover {
+    border-top:0;
+    border-left:0;
+    border-right:0;
+    border-bottom:3px solid #eee;
+}
+.context-info h1.heading {
+    font-weight:bold;
+    font-family: 'Lato', sans-serif;
+    margin-top:30px;
+}
 /**** Responsive CSS *****/
  
 @media only screen and (max-width: 768px) { 
