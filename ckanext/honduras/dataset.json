@@ -1,0 +1,118 @@
+{
+  "scheming_version": 1,
+  "dataset_type": "dataset",
+  "about": "Honduras CKAN dataset schema",
+  "about_url": "http://github.com/datopian/ckanext-honduras",
+  "dataset_fields": [
+    {
+      "field_name": "title",
+      "label": "Nombre del Dataset",
+      "required": true,
+      "preset": "title"
+    },
+    {
+      "field_name": "description",
+      "label": "Descripción del dataset",
+      "required": true
+    },
+    {
+      "field_name": "identifier",
+      "label": "Identificador del Dataset",
+      "required": true
+    },
+    {
+      "field_name": "theme",
+      "label": "Temática del dataset",
+      "required": true
+    },
+    {
+      "field_name": "keyword",
+      "label": "Palabras clave",
+      "required": true
+    },
+    {
+      "field_name": "issued",
+      "label": "Fecha de Creación del Dataset"
+    },
+    {
+      "field_name": "modified",
+      "label": "Fecha de última actualización del Dataset",
+      "required": true
+    },
+    {
+      "field_name": "accrualPeriodicity",
+      "label": "Frecuencia de actualización del Dataset",
+      "required": true
+    },
+    {
+      "field_name": "temporal",
+      "label": "Cobertura Temporal"
+    },
+    {
+      "field_name": "spatial",
+      "label": "Cobertura Geográfica"
+    },
+    {
+      "field_name": "describedBy",
+      "label": "Documentación asociada al Dataset (Diccionario de Datos o URL a modelo de datos)"
+    },
+    {
+      "field_name": "references",
+      "label": "Normativa asociada al Dataset (URL)"
+    },
+    {
+      "field_name": "license",
+      "label": "Condiciones de uso del Dataset",
+      "required": true
+    },
+    {
+      "field_name": "publisher",
+      "label": "Publicador",
+      "required": true
+    },
+    {
+      "field_name": "contactPoint",
+      "label": "Punto de Contacto",
+      "required": true
+    }
+  ],
+  "resource_fields": [
+    {
+      "field_name": "identifier",
+      "label": "Identificador de la Distribución"
+    },
+    {
+      "field_name": "name",
+      "label": "Nombre de la Distribución",
+      "required": true
+    },
+    {
+      "field_name": "decription",
+      "label": "Descripción de la Distribución",
+      "required": true
+    },
+    {
+      "field_name": "mediaType",
+      "label": "Formato de la Distribución",
+      "required": true
+    },
+    {
+      "field_name": "byteSize",
+      "label": "Tamaño de la Distribución
+    },
+    {
+      "field_name": "describedBy",
+      "label": "Documentación asociada a la Distribución (Diccionario de Datos o URL a modelo de datos)"
+    },
+    {
+      "field_name": "accessURL",
+      "label": "URL de acceso a la Distribución (Web Serveces o APIs)",
+      "preset": "resource_url_upload"
+    },
+    {
+      "field_name": "downloadURL",
+      "label": "URL de descarga de datos (Ficheros descargables)",
+      "preset": "resource_url_upload"
+    }
+  ]
+}
