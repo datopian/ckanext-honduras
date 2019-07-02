@@ -38,8 +38,9 @@
           {% endblock %}
 
           {% block footer_attribution %}
-            <a href="http://www.opendefinition.org/okd/"><img src="{{ h.url_for_static('/base/images/od_80x15_blue.png') }}" alt="Open Data"></a> <br/><br/>
-            <p>{% trans %}<a class="hide-text ckan-footer-logo" href="http://ckan.org">CKAN</a>{% endtrans %}</p>
+            <a href="http://www.opendefinition.org/okd/" id="footer-logo-1"><img src="{{ h.url_for_static('/base/images/od_80x15_blue.png') }}" alt="Open Data"></a>
+            <p id="footer-logo-2">{% trans %}<a class="hide-text ckan-footer-logo" href="http://ckan.org">CKAN</a>{% endtrans %}</p>
+            <p class="clearfix"></p>
           {% endblock %}
         </div>
       </div>
