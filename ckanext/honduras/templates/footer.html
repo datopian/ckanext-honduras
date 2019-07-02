@@ -31,7 +31,7 @@
             
           {% endblock %}
         </div>
-        <div class="col-md-2 col-md-offset-2 attribution">
+        <div class="col-md-3 col-md-offset-1 attribution">
           
           {% block footer_lang %}
             {% snippet "snippets/language_selector.html" %}
@@ -41,9 +41,26 @@
             <a href="http://www.opendefinition.org/okd/" id="footer-logo-1"><img src="{{ h.url_for_static('/base/images/od_80x15_blue.png') }}" alt="Open Data"></a>
             <p id="footer-logo-2">{% trans %}<a class="hide-text ckan-footer-logo" href="http://ckan.org">CKAN</a>{% endtrans %}</p>
             <p class="clearfix"></p>
+
+            <div class="row">
+              <div class="col-xs-5">
+                <img src="/images/USAID-logo-white.png" class="img-responsive"/>
+              </div>
+              <div class="col-xs-7">
+                <img src="/images/WB_S-WBG-Horizontal-white-web.png" class="img-responsive"/>
+              </div>
+            </div>
+            <br/>
+            <div class="row">
+              <div class="col-sm-12">
+                <p class="footer-desc">"Este portal ha sido desarrollado con la asistencia técnica del Banco Mundial y con el financiamiento de la Agencia de los Estados Unidos para el Desarrollo Internacional (USAID)</p>
+              </div>
+            </div>
           {% endblock %}
         </div>
       </div>
+
+      
       {% endblock %}
     </div>
   
