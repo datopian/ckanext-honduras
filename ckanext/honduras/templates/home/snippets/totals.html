@@ -1,3 +1,4 @@
+{{ counts = h.counter_helper() }}
 <div class="row">
 
     <div class="col-md-4">
@@ -6,7 +7,7 @@
                 <img src="images/icon-datasets.png" width=50/>
             </div>
             <div class="col-xs-4 no-pad text-left">
-                <h4>255</h4>
+                <h4>{{ counts.dataset_count }}</h4>
                 <p>{% trans %}Datasets{% endtrans %}</p>
             </div>
         </div>
@@ -18,7 +19,7 @@
                 <img src="images/icon-organizations.png" width=50/>
             </div>
             <div class="col-xs-4 no-pad text-left">
-                <h4>72</h4>
+                <h4>{{ counts.organization_count }}</h4>
                 <p>{% trans %}Organizations{% endtrans %}</p>
             </div>
         </div>
@@ -30,7 +31,7 @@
                 <img src="images/icon-groups.png" width=60/>
             </div>
             <div class="col-xs-4 no-pad text-left">
-                <h4>21</h4>
+                <h4>{{ counts.group_count }}</h4>
                 <p>{% trans %}Groups{% endtrans %}</p>
             </div>
         </div>
