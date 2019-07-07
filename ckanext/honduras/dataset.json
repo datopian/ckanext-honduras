@@ -5,14 +5,25 @@
   "about_url": "http://github.com/datopian/ckanext-honduras",
   "dataset_fields": [
     {
+      "field_name": "url",
+      "label": "URL de acceso a la Distribución (Web Serveces o APIs)",
+      "preset": "resource_url_upload"
+    },
+    {
+      "field_name": "url",
+      "label": "URL de descarga de datos (Ficheros descargables)",
+      "preset": "resource_url_upload"
+    },
+    {
       "field_name": "title",
       "label": "Nombre del Dataset",
       "required": true,
       "preset": "title"
     },
     {
-      "field_name": "description",
+      "field_name": "notes",
       "label": "Descripción del dataset",
+      "form_snippet": "markdown.html",
       "required": true
     },
     {
@@ -21,28 +32,159 @@
       "required": true
     },
     {
-      "field_name": "theme",
+      "field_name": "choices",
       "label": "Temática del dataset",
-      "required": true
+      "required": true,
+      "preset": "select",
+      "choices": [
+        {
+          "value": "ciensia-tecnologia",
+          "label": "Ciencia y Tecnología"
+        },
+        {
+          "value": "comercio",
+          "label": "Comercio"
+        },
+        {
+          "value": "cultura-ocio"
+          "label": "Cultura y Ocio"
+        },
+        {
+          "value": "demografia",
+          "label": "Demografía"
+        },
+        {
+          "value": "deporte",
+          "label": "Deporte"
+        },
+        {
+          "value": "economia",
+          "label": "Economía"
+        },
+        {
+          "value": "educacion",
+          "label": "Educación"
+        },
+        {
+          "value": "empleo",
+          "label": "Empleo"
+        },
+        {
+          "value": "energia",
+          "label": "Energía"
+        },
+        {
+          "value": "hacienda",
+          "label": "Hacienda"
+        },
+        {
+          "value": "industria",
+          "label": "Industria"
+        },
+        {
+          "value": "legislacion-justicia",
+          "label": "Legislación y Justicia"
+        },
+        {
+          "value": "medio-ambiente",
+          "label": "Medio Ambiente"
+        },
+        {
+          "value": "medio-rural",
+          "label": "Medio Rural"
+        },
+        {
+          "value": "salud",
+          "label": "Salud"
+        },
+        {
+          "value": "sector-publico",
+          "label": "Sector Público"
+        },
+        {
+          "value": "seguridad",
+          "label": "Seguridad"
+        },
+        {
+          "value": "sociedad-bienestar",
+          "label": "Sociedad y Bienestar"
+        },
+        {
+          "value": "transporte",
+          "label": "Transporte"
+        },
+        {
+          "value": "turismo",
+          "label": "Turismo"
+        },
+        {
+          "value": "urbanismo-infraestructuras",
+          "label": "Urbanismo e Infraestructuras"
+        },
+        {
+          "value": "vivienda",
+          "label": "Vivienda"
+        }
+    ]
     },
     {
-      "field_name": "keyword",
+      "field_name": "tag_string",
       "label": "Palabras clave",
+      "preset": "tag_string_autocomplete",
       "required": true
     },
     {
-      "field_name": "issued",
+      "field_name": "date",
       "label": "Fecha de Creación del Dataset"
     },
     {
-      "field_name": "modified",
+      "field_name": "date",
       "label": "Fecha de última actualización del Dataset",
       "required": true
     },
     {
       "field_name": "accrualPeriodicity",
       "label": "Frecuencia de actualización del Dataset",
-      "required": true
+      "required": true,
+      "preset": "select",
+      "choices": [
+        {
+          "value": "tiempo-real",
+          "label": "En tiempo real"
+        },
+        {
+          "value": "horaria",
+          "label": "Horaria"
+        },
+        {
+          "value": "diaria",
+          "label": "Diaria"
+        },
+        {
+          "value": "mensual",
+          "label": "Mensual"
+        },
+        {
+          "value": "bimestral",
+          "label": "Bimestral"
+        },
+        {
+          "value": "trimestral",
+          "label": "Trimestral"
+        },
+        {
+          "value": "semestral",
+          "label": "Semestral"
+        },
+        {
+          "value": "anual",
+          "label": "Anual"
+        },
+        {
+          "value": "bajo-demanda",
+          "label": "Bajo demanda"
+        }
+      ]
     },
     {
       "field_name": "temporal",
@@ -61,8 +203,9 @@
       "label": "Normativa asociada al Dataset (URL)"
     },
     {
-      "field_name": "license",
+      "field_name": "license_id",
       "label": "Condiciones de uso del Dataset",
+      "form_snippet": "license.html",
       "required": true
     },
     {
@@ -87,32 +230,23 @@
       "required": true
     },
     {
-      "field_name": "decription",
+      "field_name": "description",
       "label": "Descripción de la Distribución",
+      "form_snippet": "markdown.html",
       "required": true
     },
     {
-      "field_name": "mediaType",
+      "field_name": "format",
       "label": "Formato de la Distribución",
       "required": true
     },
     {
       "field_name": "byteSize",
-      "label": "Tamaño de la Distribución
+      "label": "Tamaño de la Distribución"
     },
     {
       "field_name": "describedBy",
       "label": "Documentación asociada a la Distribución (Diccionario de Datos o URL a modelo de datos)"
-    },
-    {
-      "field_name": "accessURL",
-      "label": "URL de acceso a la Distribución (Web Serveces o APIs)",
-      "preset": "resource_url_upload"
-    },
-    {
-      "field_name": "downloadURL",
-      "label": "URL de descarga de datos (Ficheros descargables)",
-      "preset": "resource_url_upload"
     }
   ]
 }
