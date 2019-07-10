@@ -1,0 +1,179 @@
+# Spanish translations for ckanext-honduras.
+# Copyright (C) 2019 ORGANIZATION
+# This file is distributed under the same license as the ckanext-honduras
+# project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2019.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: ckanext-honduras 0.0.1\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2019-07-10 12:39+0200\n"
+"PO-Revision-Date: 2019-07-10 12:44+0200\n"
+"Last-Translator: Datopian\n"
+"Language: es\n"
+"Language-Team: es <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.3.4\n"
+
+#: ckanext/honduras/templates/footer.html:15
+msgid "Honduras Open Data"
+msgstr "Datos Abiertos de Honduras"
+
+#: ckanext/honduras/templates/footer.html:16
+msgid "Contact"
+msgstr "Contacto"
+
+#: ckanext/honduras/templates/footer.html:17
+msgid "Honduras Open Government"
+msgstr "Gobierno Abierto de Honduras"
+
+#: ckanext/honduras/templates/footer.html:25
+msgid "Publish Datasets"
+msgstr "Publica Datos"
+
+#: ckanext/honduras/templates/footer.html:26
+msgid "Developers"
+msgstr "Desarrolladores"
+
+#: ckanext/honduras/templates/footer.html:27
+msgid "Open Data Guide"
+msgstr "Guía de Datos Abiertos"
+
+#: ckanext/honduras/templates/footer.html:42
+msgid "<a class=\"hide-text ckan-footer-logo\" href=\"http://ckan.org\">CKAN</a>"
+msgstr ""
+
+#: ckanext/honduras/templates/footer.html:56
+msgid ""
+"This portal has been developed with the technical assistance from the World "
+"Bank and financed by the United States Agency for International Development "
+"(USAID)"
+msgstr "Este portal ha sido desarrollado con la asistencia técnica del Banco Mundial y con el financiamiento de la Agencia de los Estados Unidos para el Desarrollo Internacional (USAID)"
+
+#: ckanext/honduras/templates/page.html:6
+msgid "Skip to content"
+msgstr "Saltar al contenido"
+
+#: ckanext/honduras/templates/home/about.html:12
+msgid "About"
+msgstr "Acerca de"
+
+#: ckanext/honduras/templates/home/layout1.html:26
+#: ckanext/honduras/templates/home/snippets/totals.html:35
+msgid "Groups"
+msgstr "Grupos"
+
+#: ckanext/honduras/templates/home/layout1.html:40
+msgid "View Groups"
+msgstr "Ver Grupos"
+
+#: ckanext/honduras/templates/home/layout1.html:54
+#: ckanext/honduras/templates/home/snippets/totals.html:23
+msgid "Organizations"
+msgstr "Organizaciones"
+
+#: ckanext/honduras/templates/home/layout1.html:68
+msgid "View Organizations"
+msgstr "Ver organizaciones"
+
+#: ckanext/honduras/templates/home/layout1.html:96
+msgid "Knowledge about Open Data"
+msgstr "Conocimiento sobre Datos Abiertos"
+
+#: ckanext/honduras/templates/home/layout1.html:97
+msgid ""
+"Honduras supports re-usable, accessible, understandable and shareable "
+"data. "
+msgstr ""
+
+#: ckanext/honduras/templates/home/layout1.html:98
+msgid ""
+"You will find data that Council divisions have made available to the "
+"public online. "
+msgstr ""
+
+#: ckanext/honduras/templates/home/layout1.html:99
+msgid "You can use these data sets to: "
+msgstr ""
+
+#: ckanext/honduras/templates/home/layout1.html:101
+msgid "build apps and tools "
+msgstr ""
+
+#: ckanext/honduras/templates/home/layout1.html:102
+msgid "research"
+msgstr ""
+
+#: ckanext/honduras/templates/home/layout1.html:103
+msgid "market intelligence"
+msgstr ""
+
+#: ckanext/honduras/templates/home/layout1.html:106
+msgid ""
+"Can’t find what you're looking for? Use the <a href=\"#\">Suggest a "
+"Dataset</a> tool to ask for an undiscovered set."
+msgstr ""
+
+#: ckanext/honduras/templates/home/layout1.html:107
+msgid ""
+"Get involved; connect and chat to others about existing or suggested data"
+" and share your ideas with us."
+msgstr ""
+
+#: ckanext/honduras/templates/home/layout1.html:108
+msgid ""
+"Some datasets require you to register as a user first, before you can "
+"access them."
+msgstr ""
+
+#: ckanext/honduras/templates/home/layout1.html:110
+msgid "<a href=\"#\">Register as a user</a> "
+msgstr ""
+
+#: ckanext/honduras/templates/home/layout1.html:111
+msgid "<a href=\"#\">Log-in to an existing account</a>"
+msgstr ""
+
+#: ckanext/honduras/templates/home/layout1.html:115
+#: ckanext/honduras/templates/home/snippets/reutilization.html:17
+#: ckanext/honduras/templates/home/snippets/reutilization.html:31
+msgid "Read More"
+msgstr "Leer más"
+
+#: ckanext/honduras/templates/home/layout1.html:127
+msgid "News"
+msgstr "Noticias"
+
+#: ckanext/honduras/templates/home/layout1.html:140
+msgid "View News >"
+msgstr "Ver Noticias >"
+
+#: ckanext/honduras/templates/home/layout1.html:152
+msgid "Open Data Initiative by Government of Honduras"
+msgstr "Iniciativa de Datos Abiertos del Gobierno de Honduras"
+
+#: ckanext/honduras/templates/home/layout1.html:156
+msgid "View Datasets"
+msgstr "Ver Conjuntos de Datos"
+
+#: ckanext/honduras/templates/home/snippets/reutilization.html:2
+msgid "Reuse Open Data"
+msgstr "Reutiliza Datos Abiertos"
+
+#: ckanext/honduras/templates/home/snippets/reutilization.html:3
+msgid " Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut bibendum at. "
+msgstr ""
+
+#: ckanext/honduras/templates/home/snippets/reutilization.html:9
+#: ckanext/honduras/templates/home/snippets/reutilization.html:23
+msgid "Dataset about enviornment and nature"
+msgstr ""
+
+#: ckanext/honduras/templates/home/snippets/totals.html:11
+msgid "Datasets"
+msgstr "Conjuntos de Datos"
+

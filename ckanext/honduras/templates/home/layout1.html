@@ -37,7 +37,7 @@
       <br/><br/>
       <div class="row">
         <div class="col-sm-12 text-center">
-          <a href="{% url_for controller="group", action="index" %}" class="btn btn-primary">{% trans %}View Groups >{% endtrans %}</a>
+          <a href="{% url_for controller="group", action="index" %}" class="btn btn-primary">{% trans %}View Groups{% endtrans %} ></a>
         </div>
       </div>
 
@@ -65,7 +65,7 @@
         <br/><br/>
         <div class="row">
           <div class="col-sm-12 text-center">
-            <a href="{% url_for controller="organization", action="index" %}" class="btn btn-primary">{% trans %}View Organizations >{% endtrans %}</a>
+            <a href="{% url_for controller="organization", action="index" %}" class="btn btn-primary">{% trans %}View Organizations{% endtrans %} ></a>
           </div>
         </div>
   
@@ -100,7 +100,7 @@
             <ul>
               <li>{% trans %}build apps and tools {% endtrans %}</li>
               <li>{% trans %}research{% endtrans %}</li>
-              <li>{% trans %}market intelligence  {% endtrans %}</li>
+              <li>{% trans %}market intelligence{% endtrans %}</li>
             </ul>
 
             <p>{% trans %}Can’t find what you're looking for? Use the <a href="#">Suggest a Dataset</a> tool to ask for an undiscovered set.{% endtrans %}</p>
@@ -112,7 +112,7 @@
             </ul>
             
             <br/>
-            <a href="#" class="btn btn-primary">{% trans %}Read More {% endtrans %}></a>
+            <a href="{{ h.url_for('/pages/conocimiento-sobre-datos-abiertos') }}" class="btn btn-primary">{% trans %}Read More{% endtrans %} ></a>
           </div>
 
       </div>
