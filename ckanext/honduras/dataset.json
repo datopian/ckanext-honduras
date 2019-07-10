@@ -33,7 +33,7 @@
       "preset": "dataset_organization"
 	},
     {
-      "field_name": "choices",
+      "field_name": "theme",
       "label": "Temática del dataset",
       "required": true,
       "preset": "select",
@@ -146,7 +146,7 @@
       "required": true
     },
     {
-      "field_name": "accrualPeriodicity",
+      "field_name": "frequency",
       "label": "Frecuencia de actualización del Dataset",
       "required": true,
       "preset": "select",
