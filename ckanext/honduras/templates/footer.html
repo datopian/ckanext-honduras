@@ -12,9 +12,9 @@
             <div class="row">
                 <div class="col-md-6">
                         <ul class="list-unstyled">
-                            <li><a href="#">{% trans %}Honduras Open Data{% endtrans %}</a></li>
-                            <li><a href="#">{% trans %}Contact{% endtrans %}</a></li>
-                            <li><a href="#">{% trans %}Honduras Open Government{% endtrans %}</a></li>
+                            <li><a href="{{ h.url_for('/pages/datos-abiertos-de-honduras') }}">{% trans %}Honduras Open Data{% endtrans %}</a></li>
+                            <li><a href="{{ h.url_for('/pages/contacto') }}">{% trans %}Contact{% endtrans %}</a></li>
+                            <li><a href="{{ h.url_for('/pages/gobierno-abierto-de-honduras') }}">{% trans %}Honduras Open Government{% endtrans %}</a></li>
                         </ul>
                         <ul class="list-unstyled">
                         
@@ -22,9 +22,9 @@
                 </div>
                 <div class="col-md-6">
                         <ul class="list-unstyled">
-                            <li><a href="#">{% trans %}Publish Datasets{% endtrans %}</a></li>
-                            <li><a href="#">{% trans %}Developers{% endtrans %}</a></li>
-                            <li><a href="#">{% trans %}Open Data Guide{% endtrans %}</a></li>
+                            <li><a href="{{ h.url_for('/pages/publica-datos') }}">{% trans %}Publish Datasets{% endtrans %}</a></li>
+                            <li><a href="{{ h.url_for('/pages/desarrolladores') }}">{% trans %}Developers{% endtrans %}</a></li>
+                            <li><a href="{{ h.url_for('/pages/guia-de-datos-abiertos') }}">{% trans %}Open Data Guide{% endtrans %}</a></li>
                         </ul>
                 </div>
             </div>
