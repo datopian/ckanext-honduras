@@ -152,35 +152,39 @@
       "preset": "select",
       "choices": [
         {
-          "value": "cont",
+          "value": "R/PT1S",
           "label": "En tiempo real"
         },
         {
-          "value": "hourly",
+          "value": "R/PT1H",
           "label": "Horaria"
         },
         {
-          "value": "daily",
+          "value": "R/P1D",
           "label": "Diaria"
         },
         {
-          "value": "monthly",
+          "value": "R/P1W",
+          "label": "Semanal"
+        },
+         {
+          "value": "R/P2W",
+          "label": "Quincenal"
+        },
+        {
+          "value": "R/P1M",
           "label": "Mensual"
         },
         {
-          "value": "monthly_2",
-          "label": "Bimestral"
+          "value": "R/P2M",
+          "label": "Bimensual"
         },
         {
-          "value": "monthly_2",
+          "value": "R/P3M",
           "label": "Trimestral"
         },
         {
-          "value": "monthly_6",
-          "label": "Semestral"
-        },
-        {
-          "value": "annual",
+          "value": "R/P1Y",
           "label": "Anual"
         },
         {
