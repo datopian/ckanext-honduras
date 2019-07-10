@@ -5,21 +5,17 @@
   "about_url": "http://github.com/datopian/ckanext-honduras",
   "dataset_fields": [
     {
-      "field_name": "url",
-      "label": "URL de acceso a la Distribución (Web Serveces o APIs)",
-      "preset": "resource_url_upload"
-    },
-    {
-      "field_name": "url",
-      "label": "URL de descarga de datos (Ficheros descargables)",
-      "preset": "resource_url_upload"
-    },
-    {
       "field_name": "title",
       "label": "Nombre del Dataset",
       "required": true,
       "preset": "title"
     },
+    {
+      "field_name": "name",
+      "label": "URL",
+      "preset": "dataset_slug",
+      "form_placeholder": "eg. my-dataset"
+	},
     {
       "field_name": "notes",
       "label": "Descripción del dataset",
@@ -31,6 +27,11 @@
       "label": "Identificador del Dataset",
       "required": true
     },
+    {
+      "field_name": "owner_org",
+      "label": "Publicador",
+      "preset": "dataset_organization"
+	},
     {
       "field_name": "choices",
       "label": "Temática del dataset",
@@ -134,11 +135,13 @@
       "required": true
     },
     {
-      "field_name": "date",
+      "field_name": "issued",
+      "preset": "date",
       "label": "Fecha de Creación del Dataset"
     },
     {
-      "field_name": "date",
+      "field_name": "modified",
+      "preset": "date",
       "label": "Fecha de última actualización del Dataset",
       "required": true
     },
@@ -209,11 +212,6 @@
       "required": true
     },
     {
-      "field_name": "publisher",
-      "label": "Publicador",
-      "required": true
-    },
-    {
       "field_name": "contactPoint",
       "label": "Punto de Contacto",
       "required": true
@@ -221,8 +219,9 @@
   ],
   "resource_fields": [
     {
-      "field_name": "identifier",
-      "label": "Identificador de la Distribución"
+      "field_name": "url",
+      "label": "URL",
+      "preset": "resource_url_upload"
     },
     {
       "field_name": "name",
@@ -236,9 +235,13 @@
       "required": true
     },
     {
+      "field_name": "identifier",
+      "label": "Identificador de la Distribución"
+    },
+    {
       "field_name": "format",
       "label": "Formato de la Distribución",
-      "required": true
+      "preset": "resource_format_autocomplete"
     },
     {
       "field_name": "byteSize",
