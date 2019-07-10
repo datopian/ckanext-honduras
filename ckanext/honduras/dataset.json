@@ -33,13 +33,13 @@
       "preset": "dataset_organization"
 	},
     {
-      "field_name": "choices",
+      "field_name": "theme",
       "label": "Temática del dataset",
       "required": true,
       "preset": "select",
       "choices": [
         {
-          "value": "ciensia-tecnologia",
+          "value": "ciencia-y-tecnologia",
           "label": "Ciencia y Tecnología"
         },
         {
@@ -47,7 +47,7 @@
           "label": "Comercio"
         },
         {
-          "value": "cultura-ocio",
+          "value": "cultura-y-ocio",
           "label": "Cultura y Ocio"
         },
         {
@@ -83,7 +83,7 @@
           "label": "Industria"
         },
         {
-          "value": "legislacion-justicia",
+          "value": "legislacion-y-justicia",
           "label": "Legislación y Justicia"
         },
         {
@@ -107,7 +107,7 @@
           "label": "Seguridad"
         },
         {
-          "value": "sociedad-bienestar",
+          "value": "sociedad-y-bienestar",
           "label": "Sociedad y Bienestar"
         },
         {
@@ -119,7 +119,7 @@
           "label": "Turismo"
         },
         {
-          "value": "urbanismo-infraestructuras",
+          "value": "urbanismo-e-infraestructuras",
           "label": "Urbanismo e Infraestructuras"
         },
         {
@@ -146,45 +146,49 @@
       "required": true
     },
     {
-      "field_name": "accrualPeriodicity",
+      "field_name": "frequency",
       "label": "Frecuencia de actualización del Dataset",
       "required": true,
       "preset": "select",
       "choices": [
         {
-          "value": "tiempo-real",
+          "value": "R/PT1S",
           "label": "En tiempo real"
         },
         {
-          "value": "horaria",
+          "value": "R/PT1H",
           "label": "Horaria"
         },
         {
-          "value": "diaria",
+          "value": "R/P1D",
           "label": "Diaria"
         },
         {
-          "value": "mensual",
+          "value": "R/P1W",
+          "label": "Semanal"
+        },
+         {
+          "value": "R/P2W",
+          "label": "Quincenal"
+        },
+        {
+          "value": "R/P1M",
           "label": "Mensual"
         },
         {
-          "value": "bimestral",
-          "label": "Bimestral"
+          "value": "R/P2M",
+          "label": "Bimensual"
         },
         {
-          "value": "trimestral",
+          "value": "R/P3M",
           "label": "Trimestral"
         },
         {
-          "value": "semestral",
-          "label": "Semestral"
-        },
-        {
-          "value": "anual",
+          "value": "R/P1Y",
           "label": "Anual"
         },
         {
-          "value": "bajo-demanda",
+          "value": "on-demand",
           "label": "Bajo demanda"
         }
       ]
