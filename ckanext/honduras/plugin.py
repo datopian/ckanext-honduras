@@ -2,13 +2,15 @@ import ckan.lib.helpers as h
 
 import ckan.plugins as plugins
 import ckan.plugins.toolkit as toolkit
+from ckan.lib.plugins import DefaultTranslation
 
 
 def counter_helper():
     return h.get_site_statistics()
 
 
-class HondurasPlugin(plugins.SingletonPlugin):
+class HondurasPlugin(plugins.SingletonPlugin, DefaultTranslation):
+    plugins.implements(plugins.ITranslation)
     plugins.implements(plugins.IConfigurer)
     plugins.implements(plugins.ITemplateHelpers)
 
