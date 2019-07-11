@@ -228,6 +228,20 @@
       "preset": "resource_url_upload"
     },
     {
+      "field_name": "access_url",
+      "label": "Access URL",
+      "form_snippet": null,
+      "display_snippet": null,
+      "validators": "ignore_missing"
+    },
+    {
+      "field_name": "download_url",
+      "label": "Download URL",
+      "form_snippet": null,
+      "display_snippet": null,
+      "validators": "ignore_missing"
+    },
+    {
       "field_name": "name",
       "label": "Nombre de la Distribución",
       "required": true
@@ -248,7 +262,7 @@
       "preset": "resource_format_autocomplete"
     },
     {
-      "field_name": "byteSize",
+      "field_name": "size",
       "label": "Tamaño de la Distribución"
     },
     {
