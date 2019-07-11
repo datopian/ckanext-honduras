@@ -233,14 +233,14 @@
       "form_snippet": null,
       "display_snippet": null,
       "validators": "ignore_missing"
-    }, 
+    },
     {
       "field_name": "download_url",
       "label": "Download URL",
       "form_snippet": null,
       "display_snippet": null,
       "validators": "ignore_missing"
-    }, 
+    },
     {
       "field_name": "name",
       "label": "Nombre de la Distribución",

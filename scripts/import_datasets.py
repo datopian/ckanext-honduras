@@ -12,13 +12,18 @@ from slugify import slugify
 from dateutil.parser import parse as parse_date
 
 
+def _get_script_root():
+
+    return os.path.dirname(os.path.abspath(__file__))
+
+
 def _get_schema():
-    file_path = os.path.join(
-        os.path.dirname(os.path.abspath(__file__)), '..', 'ckanext', 'honduras',
+    file_path = os.path.join(_get_script_root(), '..', 'ckanext', 'honduras',
         'dataset.json')
     with open(file_path, 'r') as f:
         schema = json.load(f)
     return schema
+
 
 def _get_choice_value(name, label, is_resource=False):
     schema = _get_schema()
@@ -26,11 +31,8 @@ def _get_choice_value(name, label, is_resource=False):
     for field in fields:
         if field['field_name'] == name:
             for choice in field.get('choices', []):
-                try:
-                    if choice.get('label').encode('utf8') == label:
+                if choice.get('label').encode('utf8') == label:
                         return choice.get('value')
-                except UnicodeDecodeError:
-                    import ipdb; ipdb.set_trace()
     return label
 
 
@@ -85,6 +87,10 @@ def _get_resource_dict(row):
 
     resource_dict = {}
     resource_dict['name'] = row['title-resource']
+
+    if not resource_dict['name']:
+        return {}
+
     resource_dict['description'] = row['description-resource']
     resource_dict['describedBy'] = row['describedBy-resource']
 
@@ -120,9 +126,32 @@ def _create_or_update_dataset(dataset_dict, ckan):
         result = action(**dataset_dict)
     except ckanapi.errors.ValidationError as e:
         print(
-            '#####  Errors found for dataset "{}": {}'.format(dataset_dict['title'], e))
+            '\n#####  Errors found for dataset "{}": {}\n'.format(dataset_dict['title'], e))
+        return
     else:
         print('{} dataset "{}"'.format(action_name.title(), dataset_dict['title']))
+
+    # Check if there are files to upload
+    for resource in result['resources']:
+        if resource.get('download_url'):
+            # Try to find the corresponding file
+            i = resource['identifier'].rfind('_')
+            file_name = '{}.{}'.format(resource['identifier'][:i], resource['format'].lower())
+
+            file_path = os.path.join(_get_script_root(), 'data', file_name)
+
+            if not os.path.exists(file_path):
+                print('\n##### Error: could not find file to upload for this resource ({})\n'.format(file_name))
+            resource['upload'] = open(file_path, 'rb')
+            try:
+
+                result = ckan.action.resource_update(**resource)
+            except ckanapi.errors.ValidationError as e:
+                print(
+                    '\n#####  Errors found uploading file {}: {}\n'.format(file_name, e))
+            else:
+                print('Uploaded file {} to resource {} from dataset {}'.format(
+                    file_name, resource['id'], dataset_dict['title']))
 
 
 def process_datasets(org, csv_file_path, url, api_key):
@@ -150,18 +179,19 @@ def process_datasets(org, csv_file_path, url, api_key):
                 dataset_dict = _get_dataset_dict(row)
                 dataset_dict['owner_org'] = org
 
-                # Add first resource (same row)
-                dataset_dict['resources'].append(_get_resource_dict(row))
 
-            elif 'Distribution' in row['@type-resource']:
+            if 'Distribution' in row['@type-resource']:
+                # Add first resource (can be in the same row)
+                resource_dict = _get_resource_dict(row)
+                if resource_dict.get('name'):
+                    dataset_dict['resources'].append(resource_dict)
 
-                dataset_dict['resources'].append(_get_resource_dict(row))
         # Save last dataset_dict or we'll miss it
         _create_or_update_dataset(dataset_dict, ckan)
         counter = counter + 1
 
 
-    print('\nDone, {} datasets processed'.format(counter))
+    print('\nDone, {} datasets processed for organization "{}"'.format(counter, org))
 
 
 if __name__ == '__main__':
