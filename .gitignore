@@ -1,3 +1,6 @@
+# Script data folder
+scripts/data
+
 .ropeproject
 node_modules
 bower_components
