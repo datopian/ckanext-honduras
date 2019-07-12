@@ -137,13 +137,15 @@
     {
       "field_name": "issued",
       "preset": "date",
-      "label": "Fecha de Creación del Dataset"
+      "label": "Fecha de Creación del Dataset",
+      "display_snippet": "date_formatted.html"
     },
     {
       "field_name": "modified",
       "preset": "date",
       "label": "Fecha de última actualización del Dataset",
-      "required": true
+      "required": true,
+      "display_snippet": "date_formatted.html"
     },
     {
       "field_name": "frequency",
