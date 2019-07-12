@@ -20,16 +20,16 @@ msgstr ""
 "Generated-By: Babel 2.3.4\n"
 
 #: ckanext/honduras/templates/footer.html:15
-msgid "Honduras Open Data"
-msgstr "Datos Abiertos de Honduras"
+msgid "Open Data"
+msgstr "Datos Abiertos"
 
 #: ckanext/honduras/templates/footer.html:16
 msgid "Contact"
 msgstr "Contacto"
 
 #: ckanext/honduras/templates/footer.html:17
-msgid "Honduras Open Government"
-msgstr "Gobierno Abierto de Honduras"
+msgid "Open Government"
+msgstr "Gobierno Abierto"
 
 #: ckanext/honduras/templates/footer.html:25
 msgid "Publish Datasets"

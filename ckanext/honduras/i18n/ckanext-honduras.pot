@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ckanext-honduras 0.0.1\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2019-07-10 12:39+0200\n"
+"POT-Creation-Date: 2019-07-12 13:50+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,7 +19,7 @@ msgstr ""
 "Generated-By: Babel 2.3.4\n"
 
 #: ckanext/honduras/templates/footer.html:15
-msgid "Honduras Open Data"
+msgid "Open Data"
 msgstr ""
 
 #: ckanext/honduras/templates/footer.html:16
@@ -27,7 +27,7 @@ msgid "Contact"
 msgstr ""
 
 #: ckanext/honduras/templates/footer.html:17
-msgid "Honduras Open Government"
+msgid "Open Government"
 msgstr ""
 
 #: ckanext/honduras/templates/footer.html:25
