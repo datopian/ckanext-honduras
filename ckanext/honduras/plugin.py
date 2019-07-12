@@ -4,9 +4,9 @@ import ckan.plugins as plugins
 import ckan.plugins.toolkit as toolkit
 from ckan.lib.plugins import DefaultTranslation
 
+from ckanext.honduras import helpers
 
-def counter_helper():
-    return h.get_site_statistics()
+
 
 
 class HondurasPlugin(plugins.SingletonPlugin, DefaultTranslation):
@@ -24,4 +24,6 @@ class HondurasPlugin(plugins.SingletonPlugin, DefaultTranslation):
     # ITemplateHelper
 
     def get_helpers(self):
-        return {'counter_helper': counter_helper}
+        return {
+            'build_links': helpers.build_links,
+        }

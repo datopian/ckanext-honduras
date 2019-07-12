@@ -199,15 +199,18 @@
     },
     {
       "field_name": "spatial",
-      "label": "Cobertura Geográfica"
+      "label": "Cobertura Geográfica",
+      "display_snippet": "link.html"
     },
     {
       "field_name": "describedBy",
-      "label": "Documentación asociada al Dataset (Diccionario de Datos o URL a modelo de datos)"
+      "label": "Documentación asociada al Dataset (Diccionario de Datos o URL a modelo de datos)",
+      "display_snippet": "text_with_links.html"
     },
     {
       "field_name": "references",
-      "label": "Normativa asociada al Dataset (URL)"
+      "label": "Normativa asociada al Dataset (URL)",
+      "display_snippet": "text_with_links.html"
     },
     {
       "field_name": "license_id",
@@ -218,6 +221,7 @@
     {
       "field_name": "contactPoint",
       "label": "Punto de Contacto",
+      "display_snippet": "email.html",
       "required": true
     }
   ],
@@ -267,7 +271,8 @@
     },
     {
       "field_name": "describedBy",
-      "label": "Documentación asociada a la Distribución (Diccionario de Datos o URL a modelo de datos)"
+      "label": "Documentación asociada a la Distribución (Diccionario de Datos o URL a modelo de datos)",
+      "display_snippet": "text_with_links.html"
     }
   ]
 }
