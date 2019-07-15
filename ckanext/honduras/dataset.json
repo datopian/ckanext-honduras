@@ -6,7 +6,7 @@
   "dataset_fields": [
     {
       "field_name": "title",
-      "label": "Nombre del Dataset",
+      "label": "Nombre",
       "required": true,
       "preset": "title"
     },
@@ -18,13 +18,13 @@
 	},
     {
       "field_name": "notes",
-      "label": "Descripción del dataset",
+      "label": "Descripción",
       "form_snippet": "markdown.html",
       "required": true
     },
     {
       "field_name": "identifier",
-      "label": "Identificador del Dataset",
+      "label": "Identificador",
       "required": true
     },
     {
@@ -34,7 +34,7 @@
 	},
     {
       "field_name": "theme",
-      "label": "Temática del dataset",
+      "label": "Temática",
       "required": true,
       "preset": "select",
       "choices": [
@@ -137,19 +137,19 @@
     {
       "field_name": "issued",
       "preset": "date",
-      "label": "Fecha de Creación del Dataset",
+      "label": "Fecha de Creación",
       "display_snippet": "date_formatted.html"
     },
     {
       "field_name": "modified",
       "preset": "date",
-      "label": "Fecha de última actualización del Dataset",
+      "label": "Fecha de última actualización",
       "required": true,
       "display_snippet": "date_formatted.html"
     },
     {
       "field_name": "frequency",
-      "label": "Frecuencia de actualización del Dataset",
+      "label": "Frecuencia de actualización",
       "required": true,
       "preset": "select",
       "choices": [
@@ -216,7 +216,7 @@
     },
     {
       "field_name": "license_id",
-      "label": "Condiciones de uso del Dataset",
+      "label": "Condiciones de uso",
       "form_snippet": "license.html",
       "required": true
     },
