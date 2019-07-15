@@ -149,8 +149,8 @@ msgid "News"
 msgstr "Noticias"
 
 #: ckanext/honduras/templates/home/layout1.html:140
-msgid "View News >"
-msgstr "Ver Noticias >"
+msgid "View News"
+msgstr "Ver Noticias"
 
 #: ckanext/honduras/templates/home/layout1.html:152
 msgid "Open Data Initiative by Government of Honduras"
