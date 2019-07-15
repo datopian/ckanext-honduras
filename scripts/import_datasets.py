@@ -81,7 +81,9 @@ def _get_dataset_dict(row):
         dataset_dict['license_id'] = 'CC-BY-SA-4.0'
 
     if row.get('theme'):
-        dataset_dict['theme'] = _get_choice_value('theme', row['theme'])
+        dataset_dict['groups'] = [
+            {'name': slugify(row['theme'])}
+        ]
 
     if row.get('accrualPeriodicity'):
         dataset_dict['frequency'] = _get_choice_value('frequency', row['accrualPeriodicity'])
