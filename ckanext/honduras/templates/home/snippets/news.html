@@ -1,42 +1,25 @@
+{% set posts = h.get_recent_blog_posts(number=3) %}
+
+{% for post in posts %}
+
+  {% set url = h.url_for(controller='ckanext.pages.controller:PagesController', action='blog_show', page='/' + post.name) %}
+
 <div class="col-sm-4">
     <div class="news-item">
-        <div class="news-header">
-            <div class="date">
-                Mar 25 2019
-            </div>
-            <img src="images/news-thumb.png" class="img-responsive"/>
-        </div>
         <div class="news-content">
-            <h4><a href="#">Celebration of "Honduras Digital Challenge"</a></h4>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas leo purus, venenatis eget mauris in, finibus cursus orci. Phasellus et porttitor tortor.</p>
+          <h4><a href="{{ url }}">{{ post.title }}</a></h4>
+          {% if post.publish_date %}
+            <div class="date"> {{ h.render_datetime(post.publish_date) }} </div>
+          {% endif %}
+
+          {% if post.content %}
+              {{ h.markdown_extract(post.content) }}
+          {% else %}
+            <p class="empty">{{ _('This post currently has no content') }}</p>
+          {% endif %}
+
         </div>
     </div>
 </div>
-<div class="col-sm-4">
-    <div class="news-item">
-        <div class="news-header">
-            <div class="date">
-                Mar 25 2019
-            </div>
-            <img src="images/news-thumb.png" class="img-responsive"/>
-        </div>
-        <div class="news-content">
-            <h4><a href="#">Celebration of "Honduras Digital Challenge"</a></h4>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas leo purus, venenatis eget mauris in, finibus cursus orci. Phasellus et porttitor tortor.</p>
-        </div>
-    </div>
-</div>
-<div class="col-sm-4">
-    <div class="news-item">
-        <div class="news-header">
-            <div class="date">
-                Mar 25 2019
-            </div>
-            <img src="images/news-thumb.png" class="img-responsive"/>
-        </div>
-        <div class="news-content">
-            <h4><a href="#">Celebration of "Honduras Digital Challenge"</a></h4>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas leo purus, venenatis eget mauris in, finibus cursus orci. Phasellus et porttitor tortor.</p>
-        </div>
-    </div>
-</div>
+
+{% endfor %}
