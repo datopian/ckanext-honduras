@@ -56,7 +56,10 @@ def _get_dataset_dict(row):
         'references',
         'contactPoint',
     ]
-    dataset_dict['name'] = slugify(row['title'])
+    if row.get('identifier'):
+        dataset_dict['name'] = slugify(row['identifier'])
+    else:
+        dataset_dict['name'] = slugify(row['title'])
 
     for field in fields:
         if row.get(field):
