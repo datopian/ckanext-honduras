@@ -77,6 +77,8 @@ def _get_dataset_dict(row):
 
     if row['license'] == 'https://creativecommons.org/licenses/by/4.0/deed.es':
         dataset_dict['license_id'] = 'CC-BY-4.0'
+    elif row['license'] == 'https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES':
+        dataset_dict['license_id'] = 'CC-BY-SA-4.0'
 
     if row.get('theme'):
         dataset_dict['theme'] = _get_choice_value('theme', row['theme'])
@@ -111,7 +113,10 @@ def _get_resource_dict(row):
         resource_dict['access_url'] = row['accessURL-resource']
     elif row['downloadURL-resource']:
         resource_dict['download_url'] = row['downloadURL-resource']
-        resource_dict['url'] = '_placeholder'
+        if row['downloadURL-resource'].startswith('https://drive.google.com'):
+            resource_dict['url'] = '_placeholder'
+        else:
+            resource_dict['url'] = row['downloadURL-resource']
 
     return resource_dict
 
@@ -136,9 +141,11 @@ def _create_or_update_dataset(dataset_dict, ckan):
 
     # Check if there are files to upload
     for resource in result['resources']:
-        if resource.get('download_url'):
+        if resource.get('download_url') and resource['download_url'].startswith('https://drive.google.com'):
+
             # Try to find the corresponding file
             i = resource['identifier'].rfind('_')
+
             file_name = '{}.{}'.format(resource['identifier'][:i], resource['format'].lower())
 
             file_path = os.path.join(_get_script_root(), 'data', file_name)
