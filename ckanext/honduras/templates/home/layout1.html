@@ -73,51 +73,6 @@
   
   </div>
 
-  <!-- Reutilizations Section -->
-  <div class="reuti section-pad">
-    <div class="container">
-      <div class="row">
-
-          {% block reutilization %}
-            {% snippet 'home/snippets/reutilization.html' %}
-          {% endblock %}
-
-      </div>
-    </div>
-  </div>
-
-
-  <!-- knowledge -->
-  <div class="knowledge section-pad">
-    <div class="container">
-      <div class="row">
-
-          <div class="col-sm-12">
-            <h2 class="section-heading">{% trans %}Knowledge about Open Data{% endtrans %}</h2>
-            <p>{% trans %}Honduras supports re-usable, accessible, understandable and shareable data. {% endtrans %}</p>
-            <p>{% trans %}You will find data that Council divisions have made available to the public online. {% endtrans %}</p>
-            <p>{% trans %}You can use these data sets to: {% endtrans %}</p>
-            <ul>
-              <li>{% trans %}build apps and tools {% endtrans %}</li>
-              <li>{% trans %}research{% endtrans %}</li>
-              <li>{% trans %}market intelligence{% endtrans %}</li>
-            </ul>
-
-            <p>{% trans %}Can’t find what you're looking for? Use the <a href="#">Suggest a Dataset</a> tool to ask for an undiscovered set.{% endtrans %}</p>
-            <p>{% trans %}Get involved; connect and chat to others about existing or suggested data and share your ideas with us.{% endtrans %}</p>
-            <p>{% trans %}Some datasets require you to register as a user first, before you can access them.{% endtrans %}</p>
-            <ul>
-              <li>{% trans %}<a href="#">Register as a user</a> {% endtrans %}</li>
-              <li>{% trans %}<a href="#">Log-in to an existing account</a>{% endtrans %}</li>
-            </ul>
-            
-            <br/>
-            <a href="{{ h.url_for('/pages/conocimiento-sobre-datos-abiertos') }}" class="btn btn-primary">{% trans %}Read More{% endtrans %} ></a>
-          </div>
-
-      </div>
-    </div>
-  </div>
 
   <!-- News -->
   <div class="news section-pad">
