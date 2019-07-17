@@ -25,6 +25,8 @@
     {
       "field_name": "identifier",
       "label": "Identificador",
+      "output_validators": "build_uri",
+      "display_snippet": "text_with_links.html",
       "required": true
     },
     {
@@ -161,10 +163,6 @@
       "label": "Descripción de la Distribución",
       "form_snippet": "markdown.html",
       "required": true
-    },
-    {
-      "field_name": "identifier",
-      "label": "Identificador de la Distribución"
     },
     {
       "field_name": "format",
