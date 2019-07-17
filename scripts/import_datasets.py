@@ -166,7 +166,7 @@ def _create_or_update_dataset(dataset_dict, ckan):
                     file_name, resource['id'], dataset_dict['title']))
 
 
-def process_datasets(org, csv_file_path, url, api_key):
+def process_datasets(org, csv_file_path, url, api_key, start_index, dry_run):
 
     ckan = ckanapi.RemoteCKAN(url, api_key)
 
@@ -175,35 +175,49 @@ def process_datasets(org, csv_file_path, url, api_key):
 
         dataset_dict = None
         counter = 0
+        skip = False
 
         for row in reader:
             if 'Dataset' in row['@type']:
+                if int(row['#']) < int(start_index):
+                    print('Skipping {}'.format(row['title']))
+                    skip = True
+                    continue
+                else:
+                    skip = False
+
 
                 if dataset_dict:
                     # All distributions finished, we can create/updated the previous
                     # dataset
-                    # TODO: use API to create/update
-
-                    _create_or_update_dataset(dataset_dict, ckan)
+                    if not dry_run or counter != 14:
+                        _create_or_update_dataset(dataset_dict, ckan)
                     counter = counter + 1
+                    if counter > 15:
+                        return
+
 
                 # Start the new dataset
+                print('{} - Dataset found: {}'.format(row['#'], row['title']))
                 dataset_dict = _get_dataset_dict(row)
                 dataset_dict['owner_org'] = org
 
 
-            if 'Distribution' in row['@type-resource']:
+            if 'Distribution' in row['@type-resource'] and not skip:
                 # Add first resource (can be in the same row)
                 resource_dict = _get_resource_dict(row)
                 if resource_dict.get('name'):
                     dataset_dict['resources'].append(resource_dict)
 
         # Save last dataset_dict or we'll miss it
-        _create_or_update_dataset(dataset_dict, ckan)
+        if not dry_run:
+            _create_or_update_dataset(dataset_dict, ckan)
         counter = counter + 1
 
 
     print('\nDone, {} datasets processed for organization "{}"'.format(counter, org))
+    if dry_run:
+        print('Dry run, no changes were made')
 
 
 if __name__ == '__main__':
@@ -213,6 +227,11 @@ if __name__ == '__main__':
     parser.add_argument('csv', help='CSV file with the datasets')
     parser.add_argument('url', help='CKAN site to update')
     parser.add_argument('api_key', help='Sysadmin API key on that site')
+    parser.add_argument('--start', action='store', default=False,
+        help='Start processing from this index')
+    parser.add_argument('--dry-run', dest='dry_run', action='store_true', default=False,
+        help='Don\'t perform any actual changes')
+
 
     args = parser.parse_args()
-    process_datasets(args.org, args.csv, args.url, args.api_key)
+    process_datasets(args.org, args.csv, args.url, args.api_key, args.start, args.dry_run)
