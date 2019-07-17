@@ -112,12 +112,12 @@
     },
     {
       "field_name": "describedBy",
-      "label": "Documentación asociada al Dataset (Diccionario de Datos o URL a modelo de datos)",
+      "label": "Información relacionada",
       "display_snippet": "text_with_links.html"
     },
     {
       "field_name": "references",
-      "label": "Normativa asociada al Dataset (URL)",
+      "label": "Normativa relacionada",
       "display_snippet": "text_with_links.html"
     },
     {
@@ -155,27 +155,27 @@
     },
     {
       "field_name": "name",
-      "label": "Nombre de la Distribución",
+      "label": "Nombre",
       "required": true
     },
     {
       "field_name": "description",
-      "label": "Descripción de la Distribución",
+      "label": "Descripción",
       "form_snippet": "markdown.html",
       "required": true
     },
     {
       "field_name": "format",
-      "label": "Formato de la Distribución",
+      "label": "Formato",
       "preset": "resource_format_autocomplete"
     },
     {
       "field_name": "size",
-      "label": "Tamaño de la Distribución"
+      "label": "Tamaño (bytes)"
     },
     {
       "field_name": "describedBy",
-      "label": "Documentación asociada a la Distribución (Diccionario de Datos o URL a modelo de datos)",
+      "label": "Diccionario de datos",
       "display_snippet": "text_with_links.html"
     }
   ]
