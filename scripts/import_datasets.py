@@ -106,8 +106,10 @@ def _get_resource_dict(row):
         _format = row['mediaType-resource']
         resource_dict['format'] =  _format if not _format.startswith('ZIP') else 'ZIP'
 
-    resource_dict['identifier'] = '{}_{}'.format(
-        row['identifier-resource'], resource_dict['format'].lower())
+    if row.get('identifier-resource'):
+        resource_dict['identifier'] = '{}_{}'.format(
+            row['identifier-resource'], resource_dict['format'].lower())
+
     if row['accessURL-resource']:
         resource_dict['url'] = row['accessURL-resource']
         resource_dict['access_url'] = row['accessURL-resource']
@@ -141,7 +143,9 @@ def _create_or_update_dataset(dataset_dict, ckan):
 
     # Check if there are files to upload
     for resource in result['resources']:
-        if resource.get('download_url') and resource['download_url'].startswith('https://drive.google.com'):
+        if (resource.get('download_url') and
+                resource['download_url'].startswith('https://drive.google.com') and
+                resource.get('identifier')):
 
             # Try to find the corresponding file
             i = resource['identifier'].rfind('_')
