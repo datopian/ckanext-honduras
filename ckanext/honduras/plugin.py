@@ -7,18 +7,10 @@ from ckan.lib.plugins import DefaultTranslation
 from ckanext.honduras import helpers
 
 
-def build_uri(value):
-    if value.startswith('http'):
-        return value
-    else:
-        return '{}/dataset/{}'.format(toolkit.config['ckan.site_url'].rstrip('/'), value)
-
-
 class HondurasPlugin(plugins.SingletonPlugin, DefaultTranslation):
     plugins.implements(plugins.ITranslation)
     plugins.implements(plugins.IConfigurer)
     plugins.implements(plugins.ITemplateHelpers)
-    plugins.implements(plugins.IValidators)
 
     # IConfigurer
 
@@ -26,13 +18,6 @@ class HondurasPlugin(plugins.SingletonPlugin, DefaultTranslation):
         toolkit.add_template_directory(config_, 'templates')
         toolkit.add_public_directory(config_, 'public')
         toolkit.add_resource('fanstatic', 'honduras')
-
-    # IValidators
-
-    def get_validators(self):
-        return {
-            'build_uri': build_uri
-        }
 
     # ITemplateHelper
 

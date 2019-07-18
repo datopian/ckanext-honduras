@@ -47,7 +47,6 @@ def _get_dataset_dict(row):
     }
     fields = [
         'title',
-        'identifier',
         'issued',
         'modified',
         'temporal',
@@ -106,7 +105,6 @@ def _get_resource_dict(row):
     if row['mediaType-resource']:
         _format = row['mediaType-resource']
         resource_dict['format'] =  _format if not _format.startswith('ZIP') else 'ZIP'
-
 
     resource_dict['identifier'] = '{}_{}'.format(
         row['identifier-resource'], resource_dict['format'].lower())

@@ -23,13 +23,6 @@
       "required": true
     },
     {
-      "field_name": "identifier",
-      "label": "Identificador",
-      "output_validators": "build_uri",
-      "display_snippet": "text_with_links.html",
-      "required": true
-    },
-    {
       "field_name": "owner_org",
       "label": "Publicador",
       "preset": "dataset_organization"
