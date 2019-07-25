@@ -126,20 +126,56 @@ def _create_or_update_dataset(dataset_dict, ckan):
 
     try:
         ckan.action.package_show(id=dataset_dict['name'])
-        action = ckan.action.package_update
-        action_name = 'update'
     except ckanapi.errors.NotFound:
-        action = ckan.action.package_create
-        action_name = 'create'
+        _create_dataset(dataset_dict, ckan)
+    else:
+        _update_dataset(dataset_dict, ckan)
+
+
+def _update_dataset(dataset_dict, ckan):
+
+    resources = dataset_dict.pop('resources', [])
+
+    dataset_dict['id'] = dataset_dict['name']
 
     try:
-        result = action(**dataset_dict)
+        result = ckan.action.package_patch(**dataset_dict)
     except ckanapi.errors.ValidationError as e:
         print(
             '\n#####  Errors found for dataset "{}": {}\n'.format(dataset_dict['title'], e))
         return
     else:
-        print('{} dataset "{}"'.format(action_name.title(), dataset_dict['title']))
+        print('Updated dataset "{}"'.format(dataset_dict['title']))
+
+    existing_resources = result.get('resources', [])
+
+    for resource_dict in resources:
+
+        for result_resource in existing_resources:
+            if result_resource['url'] == resource_dict['url']:
+                resource_dict['id'] = result_resource['id']
+
+        if not resource_dict.get('id'):
+            import ipdb; ipdb.set_trace()
+        try:
+            result = ckan.action.resource_patch(**resource_dict)
+        except ckanapi.errors.ValidationError as e:
+            print(
+                '\n#####  Errors found for resource "{}": {}\n'.format(resource_dict['id'], e))
+            return
+        else:
+            print('\tUpdated resource "{}"'.format(resource_dict['id']))
+
+def _create_dataset(dataset_dict, ckan):
+
+    try:
+        result = ckan.action.package_create(**dataset_dict)
+    except ckanapi.errors.ValidationError as e:
+        print(
+            '\n\t#####  Errors found for dataset "{}": {}\n'.format(dataset_dict['title'], e))
+        return
+    else:
+        print('\tCreated dataset "{}"'.format(dataset_dict['title']))
 
     # Check if there are files to upload
     for resource in result['resources']:
@@ -155,7 +191,7 @@ def _create_or_update_dataset(dataset_dict, ckan):
             file_path = os.path.join(_get_script_root(), 'data', file_name)
 
             if not os.path.exists(file_path):
-                print('\n##### Error: could not find file to upload for this resource ({})\n'.format(file_name))
+                print('\n\t##### Error: could not find file to upload for this resource ({})\n'.format(file_name))
             resource['upload'] = open(file_path, 'rb')
             try:
 

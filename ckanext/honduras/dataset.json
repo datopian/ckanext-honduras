@@ -31,6 +31,7 @@
       "field_name": "tag_string",
       "label": "Palabras clave",
       "preset": "tag_string_autocomplete",
+      "form_snippet": "tags.html",
       "required": true
     },
     {
