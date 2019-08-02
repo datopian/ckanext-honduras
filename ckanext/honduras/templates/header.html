@@ -4,4 +4,16 @@
     {% block header_logo %}
         <a class="logo" href="{{ h.url_for('home.index') }}"><img src="/images/honduras-logo.png" alt="{{ g.site_title }}" /></a>
     {% endblock %}
-  </hgroup>
+</hgroup>
+
+{% block header_account_logged %}
+    <li>
+      <a href="/stats" title="{{ _('Stats') }}">
+        <i class="fa fa-bar-chart" aria-hidden="true"></i>
+        <span class="text">{{ _('Stats') }}</span>
+      </a>
+    </li>
+
+    {{ super() }}
+
+{% endblock %}
