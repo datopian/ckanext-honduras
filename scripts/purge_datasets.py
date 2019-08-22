@@ -11,7 +11,7 @@ def purge_datasets(url, api_key, org):
     ckan = ckanapi.RemoteCKAN(url, api_key)
 
     fq = 'organization:{}'.format(org) if org else ''
-    datasets = ckan.action.package_search(fq=fq)['results']
+    datasets = ckan.action.package_search(fq=fq, rows=500)['results']
     for dataset in datasets:
         name = dataset['name']
         if name not in KEEP:

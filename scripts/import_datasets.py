@@ -152,7 +152,8 @@ def _update_dataset(dataset_dict, ckan):
     for resource_dict in resources:
 
         for result_resource in existing_resources:
-            if result_resource['url'] == resource_dict['url']:
+            if (result_resource['url'] == resource_dict['url'] or
+                    result_resource['identifier'] == resource_dict['identifier']):
                 resource_dict['id'] = result_resource['id']
 
         if not resource_dict.get('id'):

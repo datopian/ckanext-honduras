@@ -5,6 +5,7 @@ from urlparse import urlunsplit
 import json
 import csv
 
+import requests
 import ckanapi
 
 def _get_datapusher_error_message(status):
@@ -37,7 +38,7 @@ def _get_datapusher_error_message(status):
         return error['message']
 
 
-def check_datasets(url, api_key, org, datapusher, start):
+def check_datasets(url, api_key, org, datapusher, force_datapusher, start):
 
     url = url.rstrip('/')
 
@@ -62,6 +63,13 @@ def check_datasets(url, api_key, org, datapusher, start):
 
 
             if resource['format'].lower() in ['csv', 'xlsx', 'xls']:
+
+                # Check resource page
+                page_url = url + '/dataset/' + dataset['id'] + '/resource/' + resource['id']
+                r = requests.get(page_url)
+                if r.status_code != 200:
+                    print('##### Error in resource page, dataset {}, resource {} (code {})'.format(dataset['name'], resource['id'], r.status_code))
+
                 views = ckan.action.resource_view_list(id=resource['id'])
 
                 recline_view_exists = ('recline_view' in [v['view_type'] for v in views])
@@ -99,13 +107,12 @@ def check_datasets(url, api_key, org, datapusher, start):
                     except ckanapi.errors.CKANAPIError as e:
                         print('\t\tError getting DataPusher status: {}'.format(e))
 
-                    #if error_message and error_message.startswith('HTTP Error: 50'):
-                    if not resource.get('datastore_active') and datapusher:
-                        try:
-                            ckan.action.datapusher_submit(resource_id=resource['id'])
-                            print('\tSubmitted resource {} to the DataPusher'.format(resource['id']))
-                        except ckanapi.errors.CKANAPIError as e:
-                            print('\t\tError submitting data to the DataPusher: {}'.format(e))
+                if (not resource.get('datastore_active') and datapusher) or force_datapusher:
+                    try:
+                        ckan.action.datapusher_submit(resource_id=resource['id'])
+                        print('\tSubmitted resource {} to the DataPusher'.format(resource['id']))
+                    except ckanapi.errors.CKANAPIError as e:
+                        print('\t\tError submitting data to the DataPusher: {}'.format(e))
     if report:
         with open('honduras_datastore_errors.csv', 'w') as f:
             field_names = ['dataset', 'resource', 'error', 'url', 'resource_url']
@@ -121,8 +128,9 @@ if __name__ == '__main__':
     parser.add_argument('api_key', help='Sysadmin API key on that site')
     parser.add_argument('--org', help='Only check datasets from this org', default=False)
     parser.add_argument('--datapusher', action='store_true', help='Submit data not in DataStore', default=False)
+    parser.add_argument('--force-datapusher', action='store_true', help='Submit to DataStore in all cases', default=False)
     parser.add_argument('--start', action='store', default=False,
         help='Start processing from this index')
 
     args = parser.parse_args()
-    check_datasets(args.url, args.api_key, args.org, args.datapusher, args.start)
+    check_datasets(args.url, args.api_key, args.org, args.datapusher, args.force_datapusher, args.start)
