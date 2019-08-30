@@ -684,6 +684,10 @@ button.active {
   box-shadow: none !important;
   background-color: transparent !important;
 }
+/* Dataset page */
+.dataset-read .module .module-content .heading {
+  padding: 0;
+}
 /* Resources page */
 .resources .nav-item.active > a span {
   white-space: normal;
