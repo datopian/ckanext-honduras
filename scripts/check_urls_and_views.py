@@ -72,16 +72,24 @@ def check_datasets(url, api_key, org, datapusher, force_datapusher, start):
 
                 views = ckan.action.resource_view_list(id=resource['id'])
 
-                recline_view_exists = ('recline_view' in [v['view_type'] for v in views])
-                for view in views:
-                    if view['view_type'] == 'recline_grid_view':
-                        ckan.action.resource_view_delete(id=view['id'])
-                        if not recline_view_exists:
-                            ckan.action.resource_view_create(
-                                resource_id=resource['id'],
-                                title='Data Explorer',
-                                view_type='recline_view')
-                            print('\t\tUpdated view for resource {}'.format(resource['id']))
+                if len(views) == 0:
+                    ckan.action.resource_view_create(
+                        resource_id=resource['id'],
+                        title='Data Explorer',
+                        view_type='recline_view')
+                    print('\t\tCreated recline view for resource {}'.format(resource['id']))
+
+
+                #recline_view_exists = ('recline_view' in [v['view_type'] for v in views])
+                #for view in views:
+                #    if view['view_type'] == 'recline_grid_view':
+                #        ckan.action.resource_view_delete(id=view['id'])
+                #        if not recline_view_exists:
+                #            ckan.action.resource_view_create(
+                #                resource_id=resource['id'],
+                #                title='Data Explorer',
+                #                view_type='recline_view')
+                #            print('\t\tUpdated view for resource {}'.format(resource['id']))
 
 
                 if not resource.get('datastore_active') or len(views) == 0:
@@ -106,6 +114,9 @@ def check_datasets(url, api_key, org, datapusher, force_datapusher, start):
                             })
                     except ckanapi.errors.CKANAPIError as e:
                         print('\t\tError getting DataPusher status: {}'.format(e))
+
+
+
 
                 if (not resource.get('datastore_active') and datapusher) or force_datapusher:
                     try:
