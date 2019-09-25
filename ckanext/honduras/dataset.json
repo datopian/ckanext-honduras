@@ -165,7 +165,9 @@
     },
     {
       "field_name": "size",
-      "label": "Tamaño (bytes)"
+      "label": "Tamaño (bytes)",
+      "validators": "ignore_missing int_validator"
+
     },
     {
       "field_name": "describedBy",
