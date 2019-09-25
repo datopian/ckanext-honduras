@@ -73,7 +73,7 @@ msgstr "Ver Grupos"
 
 #: ckanext/honduras/templates/home/layout1.html:54
 #: ckanext/honduras/templates/home/snippets/totals.html:23
-msgid "Organizations"
+msgid " Organizations"
 msgstr "Instituciones"
 
 #: ckanext/honduras/templates/home/layout1.html:68
@@ -177,13 +177,28 @@ msgstr ""
 msgid "Datasets"
 msgstr "Conjuntos de Datos"
 
+#: ckanext/honduras/templates/header.html:24
+msgid "Organizations "
+msgstr "Instituciones"
+
+#: ckanext/honduras/organisation/edit_base.html:3
+#: ckanext/honduras/organisation/edit_base.html:6
+#: ckanext/honduras/organisation/index.html:3
+#: ckanext/honduras/organisation/index.html:5
+#: ckanext/honduras/organisation/read_base.html:3
+#: ckanext/honduras/organisation/read_base.html:5
+#: ckanext/honduras/organisation/facet_list.html:7
+msgid " Organizations "
+msgstr "Instituciones"
+
 #: ckan/controllers/feed.py:245 ckan/logic/action/create.py:1373
 #: ckan/views/feed.py:160
 msgid "Organization not found"
 msgstr "Institución no encontrada."
 
 #: ckan/controllers/group.py:306 ckan/controllers/home.py:61
-#: ckan/controllers/package.py:256 ckan/lib/helpers.py:1036
+#: ckan/controllers/package.py:256
+#: ckan/lib/helpers.py:1069
 #: ckan/templates/header.html:87 ckan/templates/organization/edit_base.html:5
 #: ckan/templates/organization/edit_base.html:8
 #: ckan/templates/organization/index.html:3

@@ -24,7 +24,7 @@
       <div class="row">
         <div class="col-sm-12">
           <h2 class="section-heading">{% trans %}Groups{% endtrans %}</h2>
-          
+
         </div>
       </div>
 
@@ -33,7 +33,7 @@
               {% snippet 'home/snippets/featured_group.html' %}
             {% endblock %}
       </div>
-      
+
       <br/><br/>
       <div class="row">
         <div class="col-sm-12 text-center">
@@ -51,26 +51,26 @@
       <div class="container">
         <div class="row">
           <div class="col-sm-12">
-            <h2 class="section-heading">{% trans %}Organizations{% endtrans %}</h2>
-            
+            <h2 class="section-heading">{% trans %} Organizations{% endtrans %}</h2>
+
           </div>
         </div>
-  
+
         <div class="row">
             {% block featured_organization %}
               {% snippet 'home/snippets/featured_organization.html' %}
             {% endblock %}
         </div>
-        
+
         <br/><br/>
         <div class="row">
           <div class="col-sm-12 text-center">
             <a href="{% url_for controller="organization", action="index" %}" class="btn btn-primary">{% trans %}View Organizations{% endtrans %} ></a>
           </div>
         </div>
-  
+
         </div>
-  
+
   </div>
 
 
@@ -81,8 +81,8 @@
           <div class="col-sm-12">
             <h2 class="section-heading">{% trans %}News{% endtrans %}</h2>
           </div>
-  
-            
+
+
           {% block news %}
             {% snippet 'home/snippets/news.html' %}
           {% endblock %}
@@ -95,7 +95,7 @@
             <a href="{{ h.url_for(controller='ckanext.pages.controller:PagesController', action='blog_index') }}" class="btn btn-primary">{% trans %}View News{% endtrans %} ></a>
         </div>
       </div>
-  
+
     </div>
   </div>
 
@@ -113,4 +113,3 @@
       </div>
     </div>
   </div>
-    
