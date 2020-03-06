@@ -82,6 +82,9 @@ setup(
         [ckan.plugins]
         honduras=ckanext.honduras.plugin:HondurasPlugin
 
+        [ckan.rdf.profiles]
+        honduras_dcat_ap=ckanext.honduras.plugin:HondurasDCATAPProfile
+
         [babel.extractors]
         ckan = ckan.lib.extract:extract_ckan
     ''',
